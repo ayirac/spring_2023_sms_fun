@@ -1,0 +1,312 @@
+Context:
+The universe is filled with surprises of the unknown. Here is a story of a teenager who lived with his parents and lived a privileged life. Dad was a scientist, an engineer working for the space station. Mom worked in pharmaceuticals. Their house was on a hill and they were going about their day, just like any ordinary day. A meteor had been brought to attention a few years ago and dad and his co-workers have been on meteor watch because one stray meteor is heading towards Earth. News of the meteor attracted attention, news anchors would give occasional updates of the meteor, while small groups around the world have exclaimed that the end is near. Majority of the population were not worried and continued living their life. Both parents leave to go to work and the player is left alone, on the weekend. The player checks the news, and the news anchor alerts everyone with an important broadcast: “Incoming on Meteor watch, the meteor is directly heading to Earth and is traveling at an indescribable speed. Today is the day that the end is near. During the time of despair, the teenager has not prepared for this moment to come. On the bright side, the parents has prepared, due to their bunker mentality and paranoia. A few years ago, Dad showed the teenager a prototype aircraft, along with supplies for a future voyage into space. The teen decided to risk using the prototype aircraft, rather than doing nothing and waiting for the inevitable. The teenager frantically pressing buttons to start up the aircraft, managed to successfully start up and traveled into space. The mixed emotions: of sorrow, pain, relief, and loneliness. The aircraft had enough fuel to send the teenager into space and with the risk of the prototype falling apart, was able to survive the travel. All of a sudden, the force of the aircraft changed and the aircraft had lost control, jostling the teenager in the cabin and a loud clang came from the aircraft, along with a loud thud from the teen. Movement has stopped, curiosity grew. The teen notices a suit in the aircraft and wears it. The suit was a prototype with the aircraft, allowing the user to communicate to aliens, and translate the teenager’s language into any alien language. There were modifications to the suit, such as a general map layout and storage for inventory. More modifications can be added, but the current modifications mentioned is what the teen has for the suit. The teen anxiously opens the aircraft door. A spectacle view of the sky and it’s vast emptiness with stars. In awe, the expression fades into confusion and despair because the aircraft is destroyed, along with being stranded on a planet with no awareness or having any familiarity of what Earth has. You will be the one to dictate the teenager and be journeying the unknown. You make it a goal to repair the aircraft to explore the unknown.
+The planet the player landed on is Earth adjacent. Landforms of mountains, valleys, desert, and jungles are present. The alien planet’s name is A’Pholi. A’Pholi being the ruler of the planet, having top-tier abilities and god-like strength, similarly to Apollo. The objective is to take down A’Pholi and repair the ship by fulfilling quests to repair the aircraft.
+After the player completes the tasks and takes down A’Pholi, player moves to the next planet, Z’Ur, Z’Ur is a sky planet and the ruler of the sky planet. Z’Ur, resembles Zeus and has top-tier abilities and god-like dexterity. The objective is to take down Z’Ur and increase stats and ranking up armor to prepare for what’s to come in the future.
+After the player completes the task and takes down Z’Ur, player moves to the next planet, H’Eda. H’Eda is a dark underworldly planet and the ruler of darkness. H’Eda resembles Hades and has top-tier abilities and god-like intelligence. The objective is to take down H’Eda and increase stats and ranking up armor to prepare for the finale.
+
+Base stats: 
+•	HP: +5 (Health of player is at 100)
+•	Damage: +5 (the user’s hit, universal to all weapons, damage stat is at 10)
+o	Ex: alien health = 30, user hits, -10 to enemy
+•	Crit Damage: +5 (bonus damage, damage +10%)
+•	Dexterity: +5 (some melee weapons can be affected: knives and swords)
+•	Agility: +5 (moving around the terrain / land)
+•	Accuracy: +5 (long range weapons / projectiles)
+•	Strength: +5 (melee like a blunt weapon / club / mace / axe)
+•	Intelligence / Luck: +5 (Speech affected, favoring the user’s choice and rolling for more lucky dice rolls)
+•	Charisma: +5 (charming the alien? Alien can become friends with the user / ally with them in battle?)
+•	Chaos: +5 (corrupted user, will turn evil depending on how many people killed and will increase automatically depending on how many innocent aliens are killed… user chooses violence as the option in the prompt)
+
+Weapon list:
+	Blunt Weapons:
+•	Brass knuckles (starter in inventory)
+•	Steel bar(search around aircraft)
+•	Boulder (depending on strength stat)
+•	Rein Hammer (starter in inventory)
+•	Baseball bat (search around aircraft)
+•	Wooden plank (search around aircraft)
+•	(if they search around and roll a 20) Prototype Lightning Baton 
+•	(if they search around and roll a 20) Prototype Mjol
+
+Blade Weapons:
+•	() Prototype Excal (quest reward)
+•	() Prototype Illidan Glaive (quest reward)
+•	Axe (quest reward)
+•	() Prototype Genji Shuriken (quest reward)
+•	() Prototype Kiriko Kunai
+•	Karambit (quest reward)
+•	Broadsword (quest reward)
+•	Long sword (quest reward)
+•	Scimitar (quest reward)
+•	Saber (quest reward)
+•	Kukri (quest reward)
+
+Projectiles:
+•	() Prototype Thunderbolt (quest reward)
+•	() Prototype Hama (Hama Yumi) (quest reward)
+•	() Prototype Norse (Long bow) (quest reward)
+•	Grenade 
+•	Crossbow (quest reward)
+•	Longbow
+•	Glock (on aircraft)
+•	Beretta (pistol)
+•	Desert Eagle (quest reward)
+•	Kel-tec (pistol)
+•	Sombra (SMG) (quest reward)
+•	Bastion (MG) (quest reward)
+•	() Prototype Junkrat (Grenade launcher) (quest reward)
+•	() Prototype Pharah (rocket launcher & homing missile) (quest reward)
+•	AK-47
+•	()Prototype 76Soldier (on aircraft)
+•	Blunderbuss (on aircraft)
+•	() Prototype Reaper (shotgun) (quest reward)
+•	Snake Charmer (shotgun) (on aircraft)
+•	() Prototype McCassiree (revolver) (quest reward)
+•	Widow (sniper rifle) (on aircraft)
+•	() Prototype Ashe (sniper rifle) (quest reward)
+•	Medic (rifle with antidotes) (quest reward)
+•	Flare (in aircraft)
+
+Miscellaneous:
+•	() Prototype Nail shooter (in aircraft)
+•	() Prototype Spiked bat (quest reward)
+•	Taser (in aircraft)
+•	Laser (in aircraft)
+
+Armor:
+Head
+•	Scrap metal
+•	Refined metal
+•	A’or (ore from the planet)
+•	Ancient A’or (Refined A’or which is most resilient to damage)
+Body
+•	Scrap metal
+•	Refined metal
+•	A’or
+•	Ancient A’or
+Legs
+•	Scrap metal
+•	Refined metal
+•	A’or
+•	Ancient A’or
+Feet
+•	Scrap metal
+•	Refined metal
+•	A’or
+•	Ancient A’or
+
+Inventory (Both inventories are combined):
+	On person
+•	Starter weapons (one of each type)
+•	Food and water
+•	(will expand when adventuring)
+On ship
+•	First Aid kit (1)
+•	Some weapons (most melee, a couple blade and projectiles)
+o	Brass knuckles (+5 dmg)
+o	Steel bar
+o	Rein Hammer
+o	Baseball bat
+o	Wooden plank
+o	() Prototype Kiriko Kunai (+10 dmg points)
+o	Grenade (x5, inflict +10 dmg points)
+o	Longbow (w/ arrows, +5 dmg)
+o	Glock (w/ ammo, +15 dmg)
+o	() Prototype 76Soldier (w/ ammo, +10 dmg)
+o	Blunderbuss (w/ ammo, +15 dmg)
+o	Snake Charmer(w/ ammo, +10 dmg)
+o	Widow (w/ ammo, +10 body damage, +20 on critical spots)
+o	Flare (+5 dmg)
+o	() Prototype Nail Shooter (+5 dmg)
+o	Taser (+5 dmg)
+o	Laser(+5 dmg) 
+•	Repair station for suit
+•	Extra materials and food and water (limited supply)
+
+Each time a battle is initiated, does it reset the health all the way to max? Or should it keep how it is?
+Prompts can be a mixture of choice and then when big events occur can be a dice roll
+Dice Roll: random number generator from 0-20, 0 leaning to not doing the action or having negative consequences, to 20 being in the user’s favor or benefiting them with bonuses
+
+
+
+Prompts:
+1.	Player decides to venture North, East, South, and West
+  a.	Either by dice roll or choice, user messages one of the 4 options
+  b.	North: Mountain ranges (explore all directions and complete tasks to fight A’Pholi)
+    i.	Player faces an NPC. NPC seems like a shady alien, not knowing what the NPC will do or say, the player initiates conversation and greets the NPC cautiously. Alien stares at the player and asks for a favor. The request is: battle 3 bug-looking aliens (pests) and gather the resources from their body and give it to the NPC in exchange for resources and items: half set of the refined metal armor, head and body and resources for the aircraft (1/4 resources complete).
+      1.	Player fights the pests (picking a weapon of choice), depending on dice roll numbers
+        a.	If player gets a low roll (below 10), the player gets injured and potentially can get a Damage over Time if the roll is significantly low
+        b.	If player gets a high roll, the player lands the hits, along with bonus damage depending on how high the roll is.
+        c.	Player can access inventory by saying inventory and using food to slightly heal or the first aid kit to full heal.
+      2.	After the task is fulfilled, the player is given half set of the refined metal armor, and a +1 skill point to apply to any of the stats, player can pick. The prompts asks if the player wants to venture in the remaining directions (in this case of picking North, the other options are East, South, West, if they were not completed before).
+  c.	West: desert
+    i.	An alien NPC is injured, bitten leg from a giant beast-like creature. Player is concerned and helps the NPC. NPC asks the player to fight the beast and collect the heart from the beast so that the alien can eat it and heal immediately from the wounds. If the request is fulfilled, the player will be rewarded immensely, with resources for the aircraft (2/4), food and water, and 1 Prototype weapon.
+      1.	Player chooses a weapon and the attacks are based on dice rolls
+        a.	If the player gets a low roll, the player gets injured and potentially can get a Damage over Time if the roll is significantly low
+        b.	If player gets a high roll, the player lands the hits, along with bonus damage depending on how high the roll is.
+        c.	Player can access inventory by saying inventory and using food to slightly heal or the first aid kit to full heal.
+      2.	After the task is fulfilled, the player is given the rewards, along with +1 skill point, for the player to decide where to assign it. Prompt asks if the player wants to venture the remaining directions
+  d.	South: Valley
+    i.	A youthful alien NPC approaches player with an elder alien. The young alien asks a favor for the player. The young alien wants the player to escort the elder alien to their house, while the young alien does their errand run. The player’s task is to escort the elder alien, but the catch is the elder alien wants to explore around in a dangerous direction leading home. Therefore, the player has to have a safe path for the elder, which means killing creatures that are harmful in their path and improvising by building a makeshift bridge using some resources available in the path. Whichever option the player picks, the reward will be the same. The player gets resources (3/4 of resources for the ship to be repaired), the remaining set of the refined armor, and +1 stat
+      1.	Player chooses a weapon to fend off creatures that may potentially harm. The player has an option to stealthily avoid, holding the elderly alien so that the attention of the creature is not alerted, or choose to fight the creature.
+        a.	Choosing stealth will lead them to creating a makeshift bridge, using resources in their inventory.
+        b.	Choosing to fight the creature will be based on dice roll
+          i.	If the player gets a low roll, the player gets injured and potentially can get a Damage over Time if the roll is significantly low
+          ii.	If player gets a high roll, the player lands the hits, along with bonus damage depending on how high the roll is.
+          iii.	Player can access inventory by saying inventory and using food to slightly heal or the first aid kit to full heal.
+        c.	After the task is fulfilled, the player is given the rewards, along with +1 skill point, for the player to decide where to assign it. Prompt asks if the player wants to venture the remaining directions
+  e.	East: Jungle
+    i.	The player sees a structure from afar. Player inspects and sees that the structure is abandoned. Player ventures inside and can see a treasure chest glistening through the crack of the structure, but the structure is dark. Player has to go explore inside the darkness to get what’s inside the treasure. Beware, those lurking in the dark are not friendly.
+      1.	Player encounters an enemy and gets inflicted pain, -hp. Player chooses weapon and attacks are determined by dice roll
+        i.	If the player gets a low roll, the player gets injured and potentially can get a Damage over Time if the roll is significantly low
+        ii.	If player gets a high roll, the player lands the hits, along with bonus damage depending on how high the roll is.
+        iii.	Player can access inventory by saying inventory and using food to slightly heal or the first aid kit to full heal.
+      2.	Player encounters another enemy, the enemy screeches at them.
+        a.	Player decides to choose another weapon or remain with their current weapon
+          i.	If the player gets a low roll, the player gets injured and potentially can get a Damage over Time if the roll is significantly low
+          ii.	If player gets a high roll, the player lands the hits, along with bonus damage depending on how high the roll is.
+          iii.	Player can access inventory by saying inventory and using food to slightly heal or the first aid kit to full heal.
+      3.	Another enemy surprises them from the ceiling, inflicting Damage over Time to the player.
+        a.	Player decides to choose another weapon or remain with their current weapon
+          i.	If the player gets a low roll, the player gets injured and potentially can get a Damage over Time if the roll is significantly low
+          ii.	If player gets a high roll, the player lands the hits, along with bonus damage depending on how high the roll is.
+          iii.	Player can access inventory by saying inventory and using food to slightly heal or the first aid kit to full heal.
+        b.	After killing those 3 enemies, player’s reward is 2 prototype weapons, +3 stats, and food and water.
+2.	Once venturing in all four directions are fulfilled, the player explores to the central area. The kingdom of A’Pholi. A’Pholi has a guarded fortress, rich with resources and has an abundance of food and weaponry.
+  a.	Player chooses the option to stealth all the way to the top of the kingdom
+    i.	Dice roll in terms of how successful the stealth will be
+      1.	Low roll = will stealth, but have to encounter 1 fights, potentially lessening resources
+        a.	If the player gets a low roll, the player gets injured and potentially can get a Damage over Time if the roll is significantly low
+        b.	If player gets a high roll, the player lands the hits, along with bonus damage depending on how high the roll is.
+        c.	Player can access inventory by saying inventory and using food to slightly heal or the first aid kit to full heal.
+      2.	High roll =  will stealth all the way to the top, meeting A’Pholi
+  b.	Player chooses the option to fight the guards to reach A’Pholi
+    i.	Player fights 2 guards
+      1.	If the player gets a low roll, the player gets injured and potentially can get a Damage over Time if the roll is significantly low
+      2.	If player gets a high roll, the player lands the hits, along with bonus damage depending on how high the roll is.
+      3.	Player can access inventory by saying inventory and using food to slightly heal or the first aid kit to full heal.
+  c.	Once player fulfills the task, player faces A’Pholi (50 hp, but inflicts 20 dmg, due to A’Pholi being strong)
+    i.	A’Pholi notices the outsider and views them as a threat, where A’Pholi lunges at the player and strikes first
+      1.	Determining on the player dice roll, the player can choose to dodge (high roll) or be attacked (low roll).
+      2.	Player attacks with the weapon of their choosing and dice rolls the attack
+        a.	If player gets a low roll, the player gets injured and potentially can get a Damage over Time if the roll is significantly low (player’s damage received can be up to -30)
+        b.	If player gets high roll, player lands hit, along with bonus damage depending on how high the roll is (player can max up to 20 damage if getting a nat20)
+        c.	Player has the option to access inventory
+    ii.	Once the fight is done, player receives a plentiful amount of resources, food, and weapons (2 Prototype weapons with 3 regular weapons), increase in health (+100 total health, not stat points) and damage (+10, not using stat points) and +5 stats the player can allocate.
+
+
+
+
+3.	Player has fulfilled repairing the ship, can travel to the next planet, which is Z’Ur (sky planet) and the task is to increase stats, strength and damage and rank up armor, and prepare for the finale, for answers or the last fight. Most of the creatures in this planet are floating and the terrain is solid enough for the player to walk on, but some areas of the land are not as dense, therefore the player could potentially plummet to their death.
+  a.	Player decides to Player decides to venture North, East, South, and West
+    i.	Either by dice roll or choice, user messages one of the 4 options.
+    ii.	North: The land of air currents
+      1.	Player ventures North, where wind speed can vary and become extreme. Mission here is to use the wind currents in favor for traveling and scaling up a building to get a vantage point of the land.
+        a.	Player dice rolls on how successful scaling up the building will be
+          i.	Low roll = finding another pathway inside, but there will be an enemy
+            1.	If the player gets a low roll, the player gets injured and potentially can get a Damage over Time if the roll is significantly low
+            2.	If player gets a high roll, the player lands the hits, along with bonus damage depending on how high the roll is.
+            3.	Player can access inventory by saying inventory and using food to slightly heal or the first aid kit to full heal.
+          ii.	High roll = scaling up the building and finding a secret chest at the top 
+          iii.	Once complete, the secret loot has 2 regular weapons, food and +2 stat
+        b.	After fulfilling task, the player can decide where to go
+    iii.	East: Low gravity
+     1.	Player thinks that East has potential for having better ore for armor. Player encounters a traveling merchant and the merchant has items for the player (2 of the A’or armor (legs and boots). In exchange for the items, the merchant seeks for a weapon or first aid kit.
+       a.	If player does exchange, continue to next task
+       b.	If player does not exchange, the armor set will be incomplete which will be less defense towards the finale, and continue to next task, or fight the merchant?
+        i.	IF player chooses to fight the merchant in stealing the goods, chaos level increases by +10, which decreases chance of lucky high rolls, but still gets the items of the merchant without exchanging their own items
+          1.	(Usual fight rules)
+    iv.	South: Bottomless pits through the planet
+      1.	An alien-creature floating through the plains challenges the player to a race. Beware of the bottomless pits. As a reward of the race, the player receives flight abilities, along with a prototype weapon, and food and +3 stats. If player fails, the player loses an inventory item (either by dice roll or the player choice: losing x amount of food, or a weapon, and cannot have the ability to fly.
+       a.	Player proceeds with the challenge, dice rolls with 3 obstacles
+         i.	First obstacle: flying underneath the arc
+           1.	If player rolls high, proceed to the next obstacle (style points and +3 charisma if rolled near nat20)
+           2.	If player rolls low, player gets injured and proceeds to next obstacle
+         ii.	Second obstacle: flying to the highest vantage point and diving downwards through a narrow opening
+           1.	If player rolls high, proceed to next obstacle (style points and +3 charisma if rolled near nat20)
+           2.	If player rolls low, player gets more injured and proceeds to next obstacle
+         iii.	Third obstacle: diving in the bottomless pit and flying out from one of the pits
+           1.	If player rolls high, wins the challenge along with style points and +3 charisma if rolled near nat20
+           2.	If player rolls low, player is at critical injury and loses the challenge
+      b.	Once player completes task, if player wins, the player has the flying alien as a companion in the adventure and gets the rewards. But if the player loses, player gives up some items and does not have the flight ability.
+    v.	West: Silence
+      1.	Player ventures West and as the player continues westward, the less air current sounds are heard. The far west is completely silent, and this resides the hostile creatures. Creatures have hyper-sensitive hearing but are blind. The player views a treasure chest in the middle of the Far West, but is surrounded by the hostile creatures. The player must fight, in hopes of getting a big reward in the chest. Player stealthily finds the most efficient path to the chest and sees 3 creatures guarding it.
+        a.	Player attacks one of them and chooses one of the blade weapons and the attacks are determined by dice rolls
+          i.	High roll = 1-hit combo (depending on if near nat20) and is not injured
+          ii.	Low roll = If the player gets a low roll, the player gets injured and potentially can get a Damage over Time if the roll is significantly low
+          iii.	Player can access inventory by saying inventory and using food to slightly heal or the first aid kit to full heal (if first aid kit is still in inventory).
+        b.	Repeat 2 more times
+    c.	(THIS IS IT’S OWN SEPARATE EVENT, NOT FOR ONLY WEST. THIS EVENT IS TRIGGERED ONCE PLAYER COMPLETES ALL DIRECTIONS) Once player manages to fight the 3, all of the enemies vanish into the darkness and collectively combine into a super-creature, Z’Ur (200 health and 30 damage). Since, Z’Ur is about dexterity, a tip is to either allocate points for strength to have plenty of damage or to be agile and dodge the attacks
+      i.	Player has the option to use the companion (if they have companion) for 1 move, either to be a meat shield or to attack along with the player’s attack
+      ii.	If the player gets a low roll, the player gets injured and potentially can get a Damage over Time if the roll is significantly low (The damage that the player receives can be up to -50).
+      iii.	If player gets a high roll, the player lands the hits, along with bonus damage depending on how high the roll is (The max damage amount the player can inflict on the boss is +100).
+      iv.	Player can access inventory by saying inventory and using food to slightly heal or the first aid kit to full heal.
+    d.	Once the player kills all 3 of the targets and Z’Ur, the player is able to open the treasure chest without alarming the rest, and obtains a first aid kit, a few weapons and a prototype weapon, remaining armor set of the A’Or (head and body piece), increase in health (+100 total health, not stat points) and damage (+20, not using stat points) and +5 stats the player can allocate.
+
+
+
+4.	Player has fulfilled the tasks in this planet and can move onto the next planet, H’Eda. The last planet to explore, and the task is to prepare for the finale.
+  a.	Player chooses a direction: North, East, South, or West
+  b.	North: Raining Darkness
+    i.	In the land of darkness, typically there would be hostiles, but is quite the opposite for this planet. A shrouded-stick-like creature beckons the player. The player hesitantly decides to go towards the shrouded alien creature. The creature has no face but can communicate telepathically. The message was to give the locals a piece of darkened terrain, and as a reward, the player will be given 1 refined A’Or armor piece of their choosing. Player then is given the darkened terrain. Not knowing what darkened terrain is, the power imbued by it inflicts pain to the player. Hastily, the player has to give the dark terrain to 3 locals. Each actions counts as a movement and will inflict damage to the player (-10).
+      1.	Most of the locals have a similar silhouette and are shrouded, similar to a shadow. Player encounters a shrouded silhouette. When approaching closer, the player is bitten by a hostile creature and transforms into a bigger beast. (Being in a fight halts the damage inflicted by the dark terrain). A hint is the enemy is a squishy (does not have much health, only 10), but has lots of damage (15 per move).
+        a.	Low roll = player receives a medium amount of damage
+        b.	High roll = player can 1-hit the enemy
+        c.	Player can access inventory
+      2.	Once fight is done, player moves onto another shrouded figure, this time is actually a local and is given the dark terrain (-1 in player inventory, -10 on player health)
+      3.	Another encounter of a shrouded figure, is a local and is given the dark terrain (-1 in player inventory, -10 on health).
+      4.	Player approaches a shrouded silhouette and is only the cloth of the figure. (-10 on player health).
+      5.	Player approaches a shrouded silhouette and is apparent that the shrouded figure is a local and is given the dark terrain (-1 in player inventory, -10 on player health).
+    ii.	After the player fulfills the quest, reward is given along with +3 stats and player chooses where abouts to explore
+  c.	East: Mountains of Death
+    i.	Usually falling to death is something to expect, but the mountains in these lands are dangerous to hike up, that it is deadly the further you elevate. A sludge-looking creature asks the player for a favor, to hike up the mountains and collect a flower and fruit. The flowers of the mountain are near the tops of the mountain, along with the fruit, as long as the fruits and flower are in bloom. The creature will reward the player with food and a refined A’Or armor piece of their choosing.
+      1.	Player hikes up the mountain and can roll the dice to build for easier access up the mountain or not
+        a.	High roll = easier way up the mountain with no harm to the player
+        b.	Low roll = will have to hike the mountain with no help
+      2.	The player finds the flower and flower seems to be fully bloomed, mid-level of the mountain (+1 flower in inventory)
+      3.	The player still has to hike up the mountain to get the fruit. Hiking towards the top will affect the player’s health, decreasing -10.
+      4.	There are flying darkness orbs that cluster and attack the player, -5 to health.
+      5.	Player grabs on a ledge as a shortcut to leap to get to the base of the fruit tree, it is a risky move, dice roll will be prompted to see if works in favor
+        a.	High roll = player uses shortcut and leaps to fruit, while still being stable on the steep mountain cliff
+        b.	Low roll = player falls down a bit and alerts darkness orbs, -10 from how high the elevation is, -15 because 3 orbs attacked.
+      6.	Eventually, the player grabs the fruit and has to work their way down. Luckily, descending is easier than ascending. 
+    ii.	Player gives the fruit and flower to the sludge creature and player is rewarded, along with +3 stats points of their choosing.
+  d.	West: Corpseland
+    i.	Player explores the West and going deeper westward, notices corpse of the alien species laying on the ground. There was an amount that was impossible to count, which could mean that there was a battle that took place. Cautiously, the player explores in hopes for something good to come out of this adventure. The player notices a building, out of the ordinary. The building was preserved, not in shambles in comparison to the other buildings. Before the player can proceed into the building, the player faces 2 shrouded brutes (100 health each and their damage is 30 each). These brutes did not seem friendly, in fact one of them was ready to attack.
+      1.	Player chooses a weapon and fights two of them, determined by dice rolls
+        a.	Low roll = 10 damage on both of them, but player receives -70 total damage.
+        b.	High roll = a max amount of 200 damage to each of them
+      2.	Once player completes the battle, player explores inside the building. The building has a surplus amount of food and resources, along with another first aid kit, 2 prototype weapons and few regular weapons, and +3 stats. Player can choose another area to explore
+  e.	South: Light
+    i.	Darkness elicits harm or danger, but in this world, darkness for the most part is peaceful. The player ventures into the dark world and notices a lit up path. When the player explores more in depth of the light area, the area is so bright that it hurts to see. The creatures in this area camouflages with the bright environment and notice the outsider. Depending on what the player chooses to do, the creatures will react. 
+      1.	Player can choose to explore in the Light. The more brighter the creature, the more hostile they are. Player notices a giant light figure, looking different than the rest and is staring at the player. Player is in trance and slowly walks towards the creature. Player bumps into one of the Bright creatures and the creature screeches (Bright creature: 100 health and 60 damage)
+        a.	Player chooses a weapon and the attacks are determined by dice rolls. Tip, in this world, enemies have high intelligence stats, so in this game, a recommended damage / accuracy build to get them to die quicker.
+          i.	Low Roll = player receives damage from enemy (-60)
+          ii.	High Roll = player damages enemy (50 damage)
+        b.	After the enemy is dead, player still walks towards the Giant Bright creature
+          i.	Giant Bright Creature teleports player to an unknown part of the land, where time moves still and movement is off. The Giant makes a deal with the player, decreasing the player’s total amount of health (-100) for +10 damage, +10 intelligence, +10 dexterity, +10 agility, and +10 strength
+            1.	If player decides to sacrifice health, depending on their intelligence / luck, they COULD keep their 100 along with the bonus stats, but in general will be -100 health for the stats
+            2.	If player decides to not accept the deal, player gets teleported out of the unknown and into a new area to discover.
+  f.	Player explores where light and dark meets and looks upward and sees a creature, encased in dark matter and light matter. As the player approaches near, the matter vanishes, waking up H’Eda. H’Eda is curious about the outsider. (H’Eda’s stats: 300 Health and 60 damage)
+    i.	Player can choose to either befriend H’Eda or fight H’Eda (depending on if the player has reached a certain level of Charisma and intelligence (Charisma and Intelligence have to be above 25).
+      1.	Player befriends H’Eda, H’Eda will give resources to the player, along with journeying to the final voyage.
+      2.	Player fight’s H’Eda, player can choose weapon and attacks are relied on dice rolls
+        a.	Low roll = Player receives -80 damage 
+        b.	High roll = Player attacks with +100 damage to H’Eda, along with bonus crits
+      3.	Once player fulfills task, the player is rewarded with 2 prototype weapons, a few regular weapons, increase in health (+100 into total health, not stat points) and damage (+20, not using stat points), +10 stats to allocate, and food. Player has only one destination to go.
+
+
+
+
+5.	Player reflects on the adventures that they experienced and decides to take a trip down memory lane, the dying planet, Earth. 
+  a.	Years go by, and the teenager became an adult, due to the many adventures and exploration. The player goes in the aircraft and directs travel to Earth. Aircraft survives and player lands on the base of where their house was located. All remnants of the house was mostly destroyed, with a few objects still kept intact. One of the objects that remained was a safe. The player checks on the safe and surprisingly was unlocked. There was currency, valuables, and a folder. The folder held secrets to future plans of what Dad was working on, along with what Mom was working on. But, the secret that was most interesting is that there is a family photo. There was a stain on the family photo, covering a figure. While smudging off the stain, taking a closer inspection, it seemed to be another family member. The family member seemed to be around the same age as the teenager then. It was a shocking revelation to find out that there was another sibling, rather than being the only child. The young adult had many questions and feelings, some of which cannot be answered, due to deceased parents. Many questions rose: “Why were they hiding the fact that I have a sibling?”, “Who is the sibling?, “Why did I never meet them?”, “Why were they not a part of the family?”. The emotions of the young adult were racing, and completely stopped when a figure from the distance showed up. Why is there a figure? How did they survive the meteor? The figure looked mutilated and had a missing arm and nose. The young adult was shocked and cautiously backed away from the figure. The figure yells the young adult’s name. The young adult was left in confusion, whether to fight or be amicable and converse with the figure. The young adult did not know if the figure could be hostile. As the young adult was preparing to attack, the unknown figure comes closer. The figure says, “I’ve been looking for you, my long-lost sibling”. Whether the young believe what the unknown figure said, is still deciding on whether to fight the figure or talk to the figure.
+    i.	Player decides to fight the figure, who potentially could be a family member. (Unknown figure has +500 health and 70 damage)
+      1.	Low roll = player receives damage (-90)
+      2.	High roll = player damages enemy (100)
+      3.	Player will win the Lone Achievement with the Prototype weapon from the unknown figure, and will raise the chaos skill to +30, charisma decreases to base stats, having a harder time for them to gain companions in the future.
+    ii.	Player decides to talk to the unknown figure, gets information from them. Answers why they were not part of the family, due to them being taken away because of the hospital they were born in was corrupt and took them to the lab, as part of being an experiment.
+      1.	Regardless of charisma and intelligence, the player befriending the unknown figure will be a companion and adventure to future voyages to build up civilization or find out if there’s other humans that have survived the meteor or escaped the meteor, along with befriending aliens.
+      2.	Player can still choose to kill them even after knowing the information given…
+      3.	Player will win the Friends Forever Achievement, and will have chaos stat to 0, with charisma to +20 and intelligence to +10, along with the unknown figure giving their prototype weapon to the player.
+
+
