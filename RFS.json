@@ -1,18 +1,48 @@
 {
     "weapons": { 
         
-        "blunt weapons": ["brass knuckles", "steel bar", "boulder", "rein hammer", "baseball bat","wooden plank",
-            " prototype lightning batan","prototype mjol"],
+        "blunt weapons": ["brass knuckles", "steel bar", "boulder", "rein hammer", "baseball bat", "wooden plank",
+            "prototype lightning baton", "prototype mjol"],
 
-         "blade Weapons": ["prototype excal", "prototype illidan glaive", "axe", "prototype gengi shuriken", "prototype kuriko kunai",
+         "blade Weapons": ["prototype excal", "prototype illidan glaive", "axe", "prototype gengi shuriken", "prototype kiriko kunai",
             "karambit", "long sword", "broadsword", "scimitar", "saber", "kukri"],
     
         "projectiles": 	["prototype thunderbolt" , "protoype hama", "prototype norse", "grenade",  "crossbow",
-            "longbow", "glock", "beretta", " desert eagle", "kel-tec", "sombra", "bastion", "prototype junkrat", "prototype 76soldier", 
-            "prototype pharah", "ak47", "blunderbuss", "prototype reaper", "protoype mcCassiree", "snake charmer", "widow", 
+            "longbow", "glock", "beretta", "desert eagle", "kel-tec", "sombra", "bastion", "prototype junkrat", "prototype 76soldier", 
+            "prototype pharah", "ak47", "blunderbuss", "prototype reaper", "protoype mccassiree", "snake charmer", "widow", 
             "prototype ashe", "medic", "flare"] ,
 
         "miscellaneous" : ["prototype nail shooter", "prototype spiked bat", "taser", "laser"],
     
         "armor": ["scrap metal", "refined metal", "a'or", "ancient a'or"] }  
+
+    
+    "actions": {
+
+        "combat": ["attack", "fight", "battle", "roll"],
+        "exchange": ["barter", "trade", "steal", "give", "accept", "refuse", "yes", "no"],
+        "store": ["inventory", "storage"],
+        "regenerate": ["heal", "eat"],
+        "allocate": ["assign"],
+        "construction": ["construct", "build", "assemble"],
+        "navigate": ["stealth", "move", "fly"], 
+        "interact": ["inspect", "choose", "repair", "use", "equip", "grab", "talk", "befriend"] }
+
+
+    "subjects": {
+
+        "identity": ["alien", "human", "creature"],
+        "hostile": ["enemy", "pest", "opponent"],
+        "friendly": ["companion", "friend"],
+        "body parts": ["organ", "heart"],
+        "items": ["dice", "food", "first-aid kit", "treasure chest", "aircraft"],
+        "attributes": ["stats", "health", "damage", "dexterity", "accuracy", "strength", "intelligence", "charisma"],
+        "directions": ["north", "east", "south", "west"],
+        "assembly": ["bridge", "building", "structure"],
+        "leaders": ["a'pholi", "z'ur", "h'eda"], 
+        "terrain": ["ledge"], 
+        "commerce": ["deal"] }
+
+
+
 }
