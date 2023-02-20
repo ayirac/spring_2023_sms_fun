@@ -1,0 +1,158 @@
+{
+    "start": {
+
+        "prompt": "introduction", 
+        "weapons_available": [],
+        "next state": "escaping the meteor"
+    
+    }, 
+          
+    "escaping the meteor": {
+        
+        "prompt": "escaping the meteor",
+        "next state": "planet a'pholi directions"
+    
+    },
+
+    "planet a'pholi directions": {
+        "prompt": "LOCATED IN - -, in which direction would you like to explore?",
+        "next state": ["east", "west", "north", "south"]
+    },
+
+    "east": {
+        
+        "prompt": "entering the east jungle",
+        "next state": "east first enemy"
+        
+    }, 
+
+    "east first enemy": {
+
+        "prompt":"east first enemy",
+
+        "content":{ 
+
+            "fight": {
+                "dialogue": "- east first enemy - ",
+                "friendly": false, 
+                "friendly_dialogue": "", 
+                "enemy": false, 
+                "enemy_dialogue": ""
+            },
+            "weapons_available": []
+        },
+
+        "next state": "east second enemy"
+
+    },
+
+    "east second enemy":{
+
+        "prompt": "east second enemy state",
+        "content":{ 
+
+            "fight": {
+                "dialogue": " - enemy dialogue - "
+
+            },
+            "weapons_available": []
+        },
+
+        "next state": "east third enemy"
+    },
+
+    "east third enemy": {
+        
+        "prompt": "east third enemy state",
+
+        "content":{ 
+
+            "fight": {
+                "dialogue": " - enemy dialogue - "
+            },
+            "weapons_available": []
+        },
+
+        "next state": ["planet a'pholi directions","stealth", "guard"]
+    },
+
+    "south": {
+        
+        "prompt": " entering south valley ",
+        "next state": "escort"
+    
+    },
+
+    "escort": {
+        "content":{ 
+
+            "fight": {
+                "dialogue": "- east first enemy - ",
+                "friendly": false, 
+                "friendly_dialogue": "", 
+                "enemy": false, 
+                "enemy_dialogue": ""
+            },
+            "stealth":{
+                "prompt": " - stealth mode -"
+            },
+            "weapons_available": []
+        },
+        
+        "next state": ["stealth", "gaurd"]
+    },
+
+    "stealth": {
+
+        "prompt": "stealth state",
+        "next state": "gaurd 1"
+    },
+
+    "west": {
+
+        "prompt": "west state",
+        "next state": "beast"
+
+    }, 
+
+    "beast":{
+
+        "prompt": "beast state",
+        "next state": "stealth"
+    },
+    
+    "north": {
+        
+        "prompt": "north state",
+        "next state": "pests"
+    }, 
+
+    "pests":{
+
+        "prompt": " pests state",
+        "next state": ["stealth", "guard"]
+    },
+
+    "guard 1": {
+        
+        "prompt": "gaurd 1 state",
+        "next state": "A'Pholi boss"
+    },  
+
+    "guards":{
+        "prompt": "A'pholi gaurds",
+        "next state": "a'pholi boss"
+    },
+    
+    "a'pholi boss": {
+        "prompt": "fighting boss a'pholi",
+        "content":{
+            "fight": {
+                "dialogue": " - enemy dialogue - "
+            }
+        },
+        "next state": "",
+        "end": "true"
+    }
+
+}
