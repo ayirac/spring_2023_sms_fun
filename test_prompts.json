@@ -38,17 +38,25 @@
                             "creature_attempt": "The horrifying creature slahses at you with it's claws, ",
                             "creature_failure": ["barely slicing a hair off your head.","their attack going wide!"],
                             "creature_success": ["batters painfully into your side","draws fresh blood from your chest"]
-                            
                         },
                         "ground": "You % the ground, nothing happens"
                     },
                     "default": "A default response, nothing happens."
                 }
-                
             }
         },
         "planet1": {
 
         }
+    },
+    "init": {
+        "init": {
+            "prompt": "Welcome new user, want to play a game?",
+            "next": "init-c"
+            },
+        "init-c": {
+            "prompt": "What is your name... (add more char customization)",
+            "next": "in-game"
+            }
     }
 }

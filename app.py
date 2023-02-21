@@ -21,6 +21,7 @@ ERROR_MSG = "Ooops.. Didn't work!"
 
 #Create our app
 app = Flask(__name__)
+app.debug = True
 #add in flask json
 FlaskJSON(app)
 
