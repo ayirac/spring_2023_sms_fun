@@ -1,0 +1,62 @@
+{
+    "planets":{
+        "planet0":{
+            "jungle":{
+                "level0": {
+                    "initial": "The player sees a structure from afar. (JSON for full options)",
+                    "inspect": {
+                        "structure": ["Player inspects and sees that the structure is abandoned. DEBUG: level1 jump", ["JUMP","level1"]],
+                        "ground": "The ground is dry.",
+                        "sky": "A small flying creature of some type can be seen circling around in the distance, eying you.",
+                        "creature": "You squint at the creature and see it's some sort of bird, likely scavenging."
+                    },
+                    "attack": {
+                        "ground": "You % the ground, nothing happens"
+                    },
+                    "default": "A default response, nothing happens."
+                },
+                "level1": {
+                    "initial": "Player ventures inside and can see a treasure chest glistening through the crack of the structure, but the structure is dark.",
+                    "move": {
+                        "crack": ["Player enters the structure through the crack. DEBUG: level2 jump", ["JUMP","level2"]]
+                    },
+                    "inspect": {
+                        "ground": "The ground is dry."
+                    },
+                    "attack": {
+                        "ground": "You % the ground, nothing happens"
+                    },
+                    "default": "A default response, nothing happens."
+                },
+                "level2": {
+                    "initial": "You begin to stumble around in the darkness, running into a horrifying enemy with a visage that makes your grasp your chest (-%d HP) (DEBUG: combat start)",
+                    "attack": {
+                        "creature": {
+                            "player_attempt":"You attempt to %s the creature with your %s, ",
+                            "player_failure": ["falling short of the creature's grotesque arm.", "bouncing off the thick skin of the creature", "grazing past the monster"],
+                            "player_success": ["inflcting a grevious wound the the creature's side", "causing the creature to scream out in pain"],
+                            "creature_attempt": "The horrifying creature slahses at you with it's claws, ",
+                            "creature_failure": ["barely slicing a hair off your head.","their attack going wide!"],
+                            "creature_success": ["batters painfully into your side","draws fresh blood from your chest"]
+                        },
+                        "ground": "You % the ground, nothing happens"
+                    },
+                    "default": "A default response, nothing happens."
+                }
+            }
+        },
+        "planet1": {
+
+        }
+    },
+    "init": {
+        "init": {
+            "prompt": "Welcome new user, want to play a game?",
+            "next": "init-c"
+            },
+        "init-c": {
+            "prompt": "What is your name... (add more char customization)",
+            "next": "in-game"
+            }
+    }
+}
