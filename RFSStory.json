@@ -1,0 +1,379 @@
+{
+    "init"  :   {
+        "content": "Greetings traveler!",
+        "next_state": "choose",
+        "point_delta": 0,
+        "point_within": 0,
+        "action": "fight",
+        "dice": 20,//random generated within 1-20
+        "collecting": 0,
+        "reward": "sword",//items listed... it does not matter fully what weapon the player "picks" because the damage will universally be the same ... easier on programming
+        "inventory": 0,
+
+        //base stats for the player (story-wise, player is human)
+        "attack": 0, //player's attack damage to enemy
+        "health": 100,
+        "hp": 5, //health resets after a fight is complete
+        "damage": 5,
+        "dexterity": 5,
+        "accuracy": 5,
+        "strength": 5,
+        "intelligence": 5,
+        "charisma": 5,
+        "chaos": 5,
+        "inventory": 2 //consideration of extra resources for building, along with adding more for the initial inventory
+
+        //armor
+        "starter_armor": "scrap metal",
+        "second_armor": "refined armor",
+        "evolved_armor": "a'or",
+        "best_armor": "refined a'or"
+    },
+
+    "choose" : {
+        "content": "Which direction do you want to travel to?(north, east, south, west)",
+        "next_state": [
+                        {"input": "north",
+                            "content": "We will be traveling up the mountain. You encounter a shady alien, not knowing what the alien will do or say, you greets the alien cautiously. Alien stares at the player and asks for a favor. The alien's request: battle 3 bug-looking aliens (pests) and gather the resources from their body and give it to the alien in exchange for resources and items: half set of the refined metal armor, head and body and resources for the aircraft. You encounter a pest",
+                            //for (x3 for fighting the 3 pests)
+                            "content":"Fight the first pest!", //enemy has 20 health, player can attack with 10 dmg (high roll)
+                            "attack": 10,
+                            "enemy_health": 20,
+                            "enemy_damage": 5,
+                            "action":"fight",
+                            //roll the dice...if roll is 0-10, player takes enemy hit which is -5, if roll is 10-20, hit them to half health which is -10 to enemy 
+                            "dice":20, //place holder for enemy random dice generator from 1-20
+                            //if the enemy has remaining health, do this task again, and once the enemy dies
+                            "enemy_health":-20, //place holder for the for if statement when enemy reaches 0 health
+                            //if enemy hits, player health -5
+                            "point_within": 1, //when mission is complete and add the rewards for it too (1/3)
+                            "collecting": 1, //collecting the drop of the killed enemy (1/3)
+                            "inventory": 1, //from enemy drop... allow the player to access inventory / see what is in inventory?
+
+                            "content":"Fight the second pest!",
+                            "attack": -10,
+                            "enemy_damage": -5, 
+                            "attack": 10,
+                            "enemy_health": 20,
+                            "enemy_damage": 5,
+                            "action":"fight",
+                            "dice":20,
+                            //if the enemy has remaining health, do this task again, and once the enemy dies
+                            "enemy_health":-20, //place holder for the for if statement when enemy reaches 0 health
+                            "point_within": 1, //when mission is complete and add the rewards for it too (2/3)
+                            "collecting": 1, //collecting the drop of the killed enemy (2/3)
+                            "inventory": 1, //from enemy drop
+
+                            "content":"Fight the third pest!",
+                            "attack": -10,
+                            "enemy_damage": -5, 
+                            "attack": 10,
+                            "enemy_health": 20,
+                            "enemy_damage": 5,
+                            "action:":"fight",
+                            "dice":20,
+                            //if the enemy has remaining health, do this task again, and once the enemy dies
+                            "enemy_health":-20, //place holder for the for if statement when enemy reaches 0 health
+                            "point_within": 1, //when mission is complete and add the rewards for it too (3/3)
+                            "collecting": 1, //collecting the drop of the killed enemy (3/3)
+                            "inventory": 1, //from enemy drop
+
+                            //when missions of killing 3 pests are complete (point_within 3/3) and collecting drops from enemy is 3/3
+                            "reward": "sword", //list the possible items
+                            "attack": -10, //back to 0
+                            "health": 0, //reset to 0
+                            "enemy_damage": -5,
+                            "health": 100,
+                            "collecting":-3,
+                            "content": "You obtained resources for the aircraft (1/4 in progress of repairing aircraft) and a half set of refined metal armor (head and body).",
+                            "aircraft_resource": 1,
+                            "inventory": -3, //from collecting
+                            "inventory": 3, //for aircraft resource, and 2 starter armor (head and body)
+                            "pont_delta": 1, //completing a region, has to be 4/4
+                            "content":"You complete the mission! In addition, you receive half set of the refined metal armor, and a +1 skill point to apply to any of the stats you pick (hp, damage, dexterity, accuracy, strength, intelligence, charisma).",
+                            //if input is one of the stats
+                            "stat": 1,
+                            "input": "hp",
+                                "hp": 1, //adding +1 to base stat
+                                "health": 0, //reset health to 0, constructor... minus remainder health 
+                                "health": 150, //adding +50 to 100 base health
+                            "input": "damage",
+                                "damage": 1, //adding +1 to base stat
+                                    
+                            "input": "dexterity",
+                                "dexterity": 1, //adding +1 to base stat
+                                    
+                            "input": "accuracy",
+                                "accuracy": 1, //adding +1 to base stat
+                                     
+                            "input": "strength",
+                                "strength": 1, //adding +1 to base stat
+                                     
+                            "input": "intelligence",
+                                "intelligence": 1, //adding +1 to base stat
+                                     
+                            "input": "charisma",
+                                "charisma": 1, //adding +1 to base stat
+
+
+                            "content": "Which direction do you want to travel to?"
+                        },
+                        {"input": "west",
+                            "next_state": "We will be traveling to the desert. As you explore the west, you see an alien injured, bitten leg from a giant beast-like creature. You are concerned and help the injured alien. The alien asks the player to fight the beast and collect the beast's heart so that the alien can eat it and heal immediately from the injuries. The reward is resources for aircraft, food, and 1 prototype weapon. You see a beast-like creature in the distance and walk closer to it. The beast notices you and a battle initiates.",
+                            "content": "Fight the beast!",
+                            "enemy_health": 30,
+                            //player health should be 150
+                            "attack": 15,
+                            "enemy_damage": 10,
+                            "action":"fight",
+                            //roll the dice...if roll is 0-10, player takes enemy hit which is -5, if roll is 10-20, hit them to half health which is -10 to enemy 
+                            "dice":20, //place holder for enemy random dice generator from 1-20
+                            //if the enemy has remaining health, do this task again, and once the enemy dies
+                            "enemy_health":-30, //place holder for the for if statement when enemy reaches 0 health
+                            //if enemy hits, player health -5
+                            "collecting": 1, //collecting the drop of the killed enemy
+                            "inventory": 1,
+                            "point_delta" : 1, //when mission is complete
+                            "content": "You obtained resources for the aircraft (2/4 in progress of repairing aircraft), food, and a prototype weapon (Prototype Genji Shuriken).",
+                            "aircraft_resource": 1,
+                            "inventory": 2, //food and prototype
+                            "enemy_damage": -10,
+                            "content":"You complete the mission! In addition, you receive a +1 skill point to apply to any of the stats you pick (hp, damage, dexterity, accuracy, strength, intelligence, charisma).",
+                            //if input is one of the stats
+                            "pont_delta": 1,
+                            "attack": -15,
+                            "stat": 1,
+                            "input": "hp",
+                                "hp": 1, //adding +1 to base stat
+                                "health": 0, //reset health to 0, constructor... minus remainder health 
+                                "health": 160, //adding +50 to 100 base health
+                            "input": "damage",
+                                "damage": 1, //adding +1 to base stat
+                                    
+                            "input": "dexterity",
+                                "dexterity": 1, //adding +1 to base stat
+                                    
+                            "input": "accuracy",
+                                "accuracy": 1, //adding +1 to base stat
+                                     
+                            "input": "strength",
+                                "strength": 1, //adding +1 to base stat
+                                     
+                            "input": "intelligence",
+                                "intelligence": 1, //adding +1 to base stat
+                                     
+                            "input": "charisma",
+                                "charisma": 1, //adding +1 to base stat
+
+
+                            "content":"Which direction do you want to travel to?"
+                        },
+                        {"input": "south",
+                            "next_state": "We will be traveling to the valley. The further you explore south, you notice a youthful alien walking with an elder alien. The young alien asks you a favor. The favor is to escort the elderly alien to their house, while the young alien completes their errand. While the young alien continues their errands, you escort the elder alien. The elder alien's route home is a dangerous path and it is your task to protect the elderly alien or build a makeshift path.",
+                            "content": "Make a bridge to safely avoid the enemy? Or fight the enemy? (type 'fight' or 'build')",
+                            
+                            "input": "fight",
+                            "enemy_health": 30,
+                            //player health should be 160
+                            "attack": 17,
+                            "enemy_damage": 10,
+                            "action":"fight",
+                            //roll the dice...if roll is 0-10, player takes enemy hit which is -5, if roll is 10-20, hit them to half health which is -10 to enemy 
+                            "dice":20, //place holder for enemy random dice generator from 1-20
+                            //if the enemy has remaining health, do this task again, and once the enemy dies
+                            "enemy_health":-30, //place holder for the for if statement when enemy reaches 0 health
+                            //if enemy hits, player health -5
+                            "enemy_damage": -10,
+
+                            
+                            "input": "build",
+                            "inventory": -1, //extra resources 
+                            "content": "You obtained resources for the aircraft (3/4 in progress of repairing aircraft) and remaining half set of refined metal armor (legs and feet).",
+                            "aircraft_resource": 1,
+                            "inventory": 3, //food and armor
+                            "pont_delta": 1,
+                            "content":"You complete the mission! In addition, you receive a +1 skill point to apply to any of the stats you pick (hp, damage, dexterity, accuracy, strength, intelligence, charisma).",
+                            //if input is one of the stats
+                            "stat": 1,
+                            "attack": -17,
+                            "input": "hp",
+                                "hp": 1, //adding +1 to base stat
+                                "health": 0, //reset health to 0, constructor... minus remainder health 
+                                "health": 170, //adding +50 to 100 base health
+                            "input": "damage",
+                                "damage": 1, //adding +1 to base stat
+                                    
+                            "input": "dexterity",
+                                "dexterity": 1, //adding +1 to base stat
+                                    
+                            "input": "accuracy",
+                                "accuracy": 1, //adding +1 to base stat
+                                     
+                            "input": "strength",
+                                "strength": 1, //adding +1 to base stat
+                                     
+                            "input": "intelligence",
+                                "intelligence": 1, //adding +1 to base stat
+                                     
+                            "input": "charisma",
+                                "charisma": 1, //adding +1 to base stat
+                            
+
+                            "content":"Which direction do you want to travel to?"
+                        },
+                        {"input": "east",
+                            "next_state": "We will be traveling to the jungle. The more you explore, a structure from afar is seen. You travel to the structure and the atmosphere feels empty. The strcture is abandoned, which you curiously explore and see a treasure chest at the end of the hallway. The structure is dark. You want to know what is inside and proceed to walk in. Beware of those lurking in the dark. An enemy surprises you.",
+                            "content":"Fight the first enemy!", 
+                            //health should be at 170
+                            "attack": 20,
+                            "enemy_health": 20,
+                            "enemy_damage": 10,
+                            "action":"fight",
+                            //roll the dice...if roll is 0-10, player takes enemy hit which is -5, if roll is 10-20, hit them to half health which is -10 to enemy 
+                            "dice":20, //place holder for enemy random dice generator from 1-20
+                            //if the enemy has remaining health, do this task again, and once the enemy dies
+                            "enemy_health":-20, //place holder for the for if statement when enemy reaches 0 health
+                            //if enemy hits, player health -5
+                            "point_within": 1, //when mission is complete and add the rewards for it too (1/3)
+
+                            "content":"As you end the first enemy, you explore in the darkness to find out what is in the treasure chest. An enemy screeches at you. Fight the second enemy!",
+                            "attack": -20,
+                            "enemy_damage": -10, 
+                            "attack": 20,
+                            "enemy_health": 20,
+                            "enemy_damage": 10,
+                            "action":"fight",
+                            "dice":20,
+                            //if the enemy has remaining health, do this task again, and once the enemy dies
+                            "enemy_health":-20, //place holder for the for if statement when enemy reaches 0 health
+                            "point_within": 1, //when mission is complete and add the rewards for it too (2/3)
+
+                            "content":"Once the second enemy is slain, you proceed to go closer to the treasure chest. The last enemy surprises you from the ceiling and landing on you. Fight the third enemy!",
+                            "attack": -20,
+                            "enemy_damage": -10, 
+                            "attack": 20,
+                            "enemy_health": 20,
+                            "enemy_damage": 10,
+                            "action:":"fight",
+                            "dice":20,
+                            //if the enemy has remaining health, do this task again, and once the enemy dies
+                            "enemy_health":-20, //place holder for the for if statement when enemy reaches 0 health
+                            "point_within": 1, //when mission is complete and add the rewards for it too (3/3)
+                            "content": "You obtained two prototype weapons (Prototype Excal and Prototype 76Soldier) and food.",
+                            "inventory": 3, //food and 2 weapons
+                            "content":"You complete the mission! In addition, you receive +3 skill points to apply to any of the stats you pick (hp, damage, dexterity, accuracy, strength, intelligence, charisma).",
+                            //if input is one of the stats
+                            "pont_delta": 1,
+                            "attack": -20,
+                            "stat": 3,
+                            //for loop for the stats 3 times
+                            "input": "hp",
+                                "hp": 1, //adding +1 to base stat
+                                "health": 0, //reset health to 0, constructor... minus remainder health 
+                                "health": 200, //adding +50 to 100 base health
+                            "input": "damage",
+                                "damage": 1, //adding +1 to base stat
+                                    
+                            "input": "dexterity",
+                                "dexterity": 1, //adding +1 to base stat
+                                    
+                            "input": "accuracy",
+                                "accuracy": 1, //adding +1 to base stat
+                                     
+                            "input": "strength",
+                                "strength": 1, //adding +1 to base stat
+                                     
+                            "input": "intelligence",
+                                "intelligence": 1, //adding +1 to base stat
+                                     
+                            "input": "charisma",
+                                "charisma": 1, //adding +1 to base stat
+
+
+                            
+                            "content":"Now that you have completed exploring the regions for the first planet, A'Pholi, you would need to defeat the first boss to repair the aircraft fully.",
+                            "content": "A’Pholi has a guarded fortress, rich with resources and has an abundance of food and weaponry.",
+                            "input": "fight",
+                            "enemy_health": 25,
+                            //player health should be 200
+                            "attack": 25,
+                            "enemy_damage": 10,
+                            "action":"fight",
+                            //roll the dice...if roll is 0-10, player takes enemy hit which is -5, if roll is 10-20, hit them to half health which is -10 to enemy 
+                            "dice":20, //place holder for enemy random dice generator from 1-20
+                            //if the enemy has remaining health, do this task again, and once the enemy dies
+                            "enemy_health":-25, //place holder for the for if statement when enemy reaches 0 health
+                            //if enemy hits, player health -5
+                            "enemy_damage": -10,
+                            "attack": -25,
+                            "content": "One of A'Pholi's guards notices you and runs to attack.",
+                            "enemy_health": 25,
+                            //player health should be 200
+                            "attack": 25,
+                            "enemy_damage": 10,
+                            "action":"fight",
+                            //roll the dice...if roll is 0-10, player takes enemy hit which is -5, if roll is 10-20, hit them to half health which is -10 to enemy 
+                            "dice":20, //place holder for enemy random dice generator from 1-20
+                            //if the enemy has remaining health, do this task again, and once the enemy dies
+                            "enemy_health":-25, //place holder for the for if statement when enemy reaches 0 health
+                            //if enemy hits, player health -5
+                            "enemy_damage": -10,
+                            "attack": -25,
+                            
+
+                            
+                            "input": "build",
+                            "inventory": -1, //extra resources used ... roll
+                            "content": "You managed to build a way easier path to A'Pholi. A'Pholi's strength intimidates you and A'Pholi is ready to strike.",
+                            "attack": 30,
+                            "enemy_damage": 25,
+                            "enemy_health": 50,
+                            "action":"fight",
+                            //roll the dice...if roll is 0-10, player takes enemy hit which is -5, if roll is 10-20, hit them to half health which is -10 to enemy 
+                            "dice":20, //place holder for enemy random dice generator from 1-20
+                            //if the enemy has remaining health, do this task again, and once the enemy dies
+                            "enemy_health":-50, //place holder for the for if statement when enemy reaches 0 health
+                            //if enemy hits, player health -5
+                            "enemy_damage": -25,
+                            "attack": -30,
+                            "content": "You obtained resources (4/4 aircraft resources), food, weapons (two Prototype weapons and 3 regular weapons: Regular - Axe, broadsword, sombra (smg), Prototype: Ashe (sniper rifle) and Prototype Spiked Bat. )",
+                            "inventory": 7,
+                            "content":"You complete the mission! In addition, you receive an increase in health and damage and +5 skill point to apply to any of the stats you pick (hp, damage, dexterity, accuracy, strength, intelligence, charisma).",
+                            //if input is one of the stats
+                            "stat": 5,
+                            "point_delta": 1,
+                            "attack": -30,
+                            "input": "hp",
+                                "hp": 5, //adding +1 to base stat
+                                "health": 0, //reset health to 0, constructor... minus remainder health 
+                                "health": 300, //adding +50 to 100 base health
+                            "input": "damage",
+                                "damage": 5, //adding +1 to base stat
+                                    
+                            "input": "dexterity",
+                                "dexterity": 5, //adding +1 to base stat
+                                    
+                            "input": "accuracy",
+                                "accuracy": 5, //adding +1 to base stat
+                                     
+                            "input": "strength",
+                                "strength": 5, //adding +1 to base stat
+                                     
+                            "input": "intelligence",
+                                "intelligence": 5, //adding +1 to base stat
+                                     
+                            "input": "charisma",
+                                "charisma": 5, //adding +1 to base stat
+                            
+
+                        }]
+    },
+    "north" : {
+            "content" : "As you go further in the mountains",
+            "next_state" : "You encounter an enemy"
+    },
+    "east": {
+            "content" : "As you go further "
+    }
+
+}
