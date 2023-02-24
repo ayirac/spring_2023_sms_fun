@@ -14,7 +14,7 @@
 
         "miscellaneous" : ["prototype nail shooter", "prototype spiked bat", "taser", "laser"],
     
-        "armor": ["scrap metal", "refined metal", "a'or", "ancient a'or"] }  
+        "armor": ["scrap metal", "refined metal", "a'or", "ancient a'or"] },  
 
     
     "actions": {
@@ -26,7 +26,7 @@
         "allocate": ["assign"],
         "construction": ["construct", "build", "assemble"],
         "navigate": ["stealth", "move", "fly"], 
-        "interact": ["inspect", "choose", "repair", "use", "equip", "grab", "talk", "befriend"] }
+        "interact": ["inspect", "choose", "repair", "use", "equip", "grab", "talk", "befriend"] },
 
 
     "subjects": {
