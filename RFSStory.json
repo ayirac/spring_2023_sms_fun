@@ -21,7 +21,7 @@
         "intelligence": 5,
         "charisma": 5,
         "chaos": 5,
-        "inventory": 2 //consideration of extra resources for building, along with adding more for the initial inventory
+        "inventory": 2, //consideration of extra resources for building, along with adding more for the initial inventory
 
         //armor
         "starter_armor": "scrap metal",
@@ -29,6 +29,12 @@
         "evolved_armor": "a'or",
         "best_armor": "refined a'or"
     },
+
+    "story": "The universe is filled with surprises of the unknown. Here is a story of a teenager who lived with his parents and lived a privileged life. Dad was a scientist, an engineer working for the space station. Mom worked in pharmaceuticals. Their house was on a hill, and they were going about their day, just like any ordinary day. A meteor had been brought to attention a few years ago and dad and his co-workers have been on meteor watch because one stray meteor is heading towards Earth. News of the meteor attracted attention, news anchors would give occasional updates of the meteor, while small groups around the world have exclaimed that the end is near. Majority of the population were not worried and continued living their life. Both parents leave to go to work and the player is left alone, on the weekend.",
+    "story2": "The teen checks the news, and the news anchor alerts everyone with an important broadcast: “Incoming on Meteor watch, the meteor is directly heading to Earth and is traveling at an indescribable speed. Today is the day that the end is near. During the time of despair, the teenager has not prepared for this moment to come. On the bright side, the parents have prepared, due to their bunker mentality and paranoia. A few years ago, Dad showed the teenager a prototype aircraft, along with supplies for a future voyage into space.",
+    "story3": "The teen decided to risk using the prototype aircraft, rather than doing nothing and waiting for the inevitable. The teenager frantically pressing buttons to start up the aircraft, managed to successfully start up and traveled into space. The mixed emotions: of sorrow, pain, relief, and loneliness. The aircraft had enough fuel to send the teenager into space and with the risk of the prototype falling apart, was able to survive the travel. Suddenly, the force of the aircraft changed, and the aircraft had lost control, jostling the teenager in the cabin and a loud clang came from the aircraft, along with a loud thud from the teen. Movement has stopped, curiosity grew. The teen notices a suit in the aircraft and wears it. The suit was a prototype with the aircraft, allowing the user to communicate to aliens, and translate the teenager’s language into any alien language. There were modifications to the suit, such as a general map layout and storage for inventory. More modifications can be added, but the current modifications mentioned is what the teen has for the suit. ",
+    "story4": "The teen anxiously opens the aircraft door. A spectacle view of the sky and its vast emptiness with stars. In awe, the expression fades into confusion and despair because the aircraft is destroyed, along with being stranded on a planet with no awareness or having any familiarity of what Earth has. You will be the one to dictate the teenager and be journeying the unknown. You make it a goal to repair the aircraft to explore the unknown.",
+    "story_objective": "The planet the player landed on is Earth adjacent. Landforms of mountains, valleys, desert, and jungles are present. The alien planet’s name is A’Pholi. A’Pholi being the ruler of the planet, having top-tier abilities and God-like strength, similarly to Apollo. The objective is to take down A’Pholi and repair the ship by fulfilling quests to repair the aircraft.",
 
     "choose" : {
         "content": "Which direction do you want to travel to?(north, east, south, west)",
@@ -89,7 +95,7 @@
                             "aircraft_resource": 1,
                             "inventory": -3, //from collecting
                             "inventory": 3, //for aircraft resource, and 2 starter armor (head and body)
-                            "pont_delta": 1, //completing a region, has to be 4/4
+                            "point_delta": 1, //completing a region, has to be 4/4
                             "content":"You complete the mission! In addition, you receive half set of the refined metal armor, and a +1 skill point to apply to any of the stats you pick (hp, damage, dexterity, accuracy, strength, intelligence, charisma).",
                             //if input is one of the stats
                             "stat": 1,
@@ -114,7 +120,7 @@
                                      
                             "input": "charisma",
                                 "charisma": 1, //adding +1 to base stat
-
+                            "stat": -1,
 
                             "content": "Which direction do you want to travel to?"
                         },
@@ -140,7 +146,7 @@
                             "enemy_damage": -10,
                             "content":"You complete the mission! In addition, you receive a +1 skill point to apply to any of the stats you pick (hp, damage, dexterity, accuracy, strength, intelligence, charisma).",
                             //if input is one of the stats
-                            "pont_delta": 1,
+                            "point_delta": 1,
                             "attack": -15,
                             "stat": 1,
                             "input": "hp",
@@ -164,7 +170,7 @@
                                      
                             "input": "charisma",
                                 "charisma": 1, //adding +1 to base stat
-
+                            "stat": -1,
 
                             "content":"Which direction do you want to travel to?"
                         },
@@ -191,7 +197,7 @@
                             "content": "You obtained resources for the aircraft (3/4 in progress of repairing aircraft) and remaining half set of refined metal armor (legs and feet).",
                             "aircraft_resource": 1,
                             "inventory": 3, //food and armor
-                            "pont_delta": 1,
+                            "point_delta": 1,
                             "content":"You complete the mission! In addition, you receive a +1 skill point to apply to any of the stats you pick (hp, damage, dexterity, accuracy, strength, intelligence, charisma).",
                             //if input is one of the stats
                             "stat": 1,
@@ -217,7 +223,7 @@
                                      
                             "input": "charisma",
                                 "charisma": 1, //adding +1 to base stat
-                            
+                            "stat": -1,
 
                             "content":"Which direction do you want to travel to?"
                         },
@@ -263,7 +269,7 @@
                             "inventory": 3, //food and 2 weapons
                             "content":"You complete the mission! In addition, you receive +3 skill points to apply to any of the stats you pick (hp, damage, dexterity, accuracy, strength, intelligence, charisma).",
                             //if input is one of the stats
-                            "pont_delta": 1,
+                            "point_delta": 1,
                             "attack": -20,
                             "stat": 3,
                             //for loop for the stats 3 times
@@ -272,23 +278,23 @@
                                 "health": 0, //reset health to 0, constructor... minus remainder health 
                                 "health": 200, //adding +50 to 100 base health
                             "input": "damage",
-                                "damage": 1, //adding +1 to base stat
+                                "damage": 3, 
                                     
                             "input": "dexterity",
-                                "dexterity": 1, //adding +1 to base stat
+                                "dexterity": 3, 
                                     
                             "input": "accuracy",
-                                "accuracy": 1, //adding +1 to base stat
+                                "accuracy": 3, 
                                      
                             "input": "strength",
-                                "strength": 1, //adding +1 to base stat
+                                "strength": 3, 
                                      
                             "input": "intelligence",
-                                "intelligence": 1, //adding +1 to base stat
+                                "intelligence": 3, 
                                      
                             "input": "charisma",
-                                "charisma": 1, //adding +1 to base stat
-
+                                "charisma": 3, 
+                            "stat": -3,
 
                             
                             "content":"Now that you have completed exploring the regions for the first planet, A'Pholi, you would need to defeat the first boss to repair the aircraft fully.",
@@ -348,32 +354,117 @@
                                 "health": 0, //reset health to 0, constructor... minus remainder health 
                                 "health": 300, //adding +50 to 100 base health
                             "input": "damage",
-                                "damage": 5, //adding +1 to base stat
+                                "damage": 5, 
                                     
                             "input": "dexterity",
-                                "dexterity": 5, //adding +1 to base stat
+                                "dexterity": 5, 
                                     
                             "input": "accuracy",
-                                "accuracy": 5, //adding +1 to base stat
+                                "accuracy": 5, 
                                      
                             "input": "strength",
-                                "strength": 5, //adding +1 to base stat
+                                "strength": 5, 
                                      
                             "input": "intelligence",
-                                "intelligence": 5, //adding +1 to base stat
+                                "intelligence": 5, 
                                      
                             "input": "charisma",
-                                "charisma": 5, //adding +1 to base stat
+                                "charisma": 5, 
+
+                            "stat": -5
                             
 
                         }]
     },
-    "north" : {
-            "content" : "As you go further in the mountains",
-            "next_state" : "You encounter an enemy"
-    },
-    "east": {
-            "content" : "As you go further "
-    }
+    "finale" : {
+            "final_story" : "You reflect on the adventures that you experienced, living as the teen, and decides to take a trip down memory lane, the dying planet, Earth. ",
+            "final_story2": "Years go by, and the teenager became an adult, due to the many adventures and exploration. The player goes in the aircraft and directs travel to Earth. Aircraft survives and player lands on the base of where their house was located. All remnants of the house were mostly destroyed, with a few objects kept intact. One of the objects that remained was a safe. The player checks on the safe and surprisingly was unlocked. There was currency, valuables, and a folder. The folder held secrets to future plans of what Dad was working on, along with what Mom was working on. What was found out after looking through the items in the safe was a surprise, a secret that the parents hid from the now young adult had piqued interest. ",
+            "final_story3": "The interesting item in the safe happens to be a family photo. There was a stain on the family photo, covering a figure. While smudging off the stain, taking a closer inspection, it seemed to be another family member. The family member seemed to be around the same age as the teenager then. It was a shocking revelation to find out that there was another sibling, rather than being the only child. The young adult had many questions and feelings, some of which cannot be answered, due to deceased parents. ",
+            "final_story4": "Many questions rose: Why were they hiding the fact that I have a sibling?, Who is the sibling?, Why did I never meet them?, Why were they not a part of the family?",
+            "final_story5": "The emotions of the young adult were racing, and completely stopped when a figure from the distance showed up. Why is there a figure? How did they survive the meteor? The figure looked mutilated and had a missing arm and nose. The young adult was shocked and cautiously backed away from the figure. The figure yells the young adult’s name. The young adult was left in confusion, whether to fight or be amicable and converse with the figure. The young adult did not know if the figure could be hostile. As the young adult was preparing to attack, the unknown figure comes closer. The figure says, “I’ve been looking for you, my long-lost sibling”. Whether the young believe what the unknown figure said, is still deciding on whether to fight the figure or talk to the figure.",
 
+            "choose": {
+                "content": "What do you choose?(fight, talk)",
+                "next_state" : [
+                    {"input": "fight",
+                        "content": "You choose to fight the figure, who happens to be a family member who survived the meteor, has a strong aura permeating, intimidating you.",
+                        "attack": 100,
+                        "enemy_health": 500,
+                        "enemy_damage": 60,
+                        "action":"fight",
+                        //roll the dice...if roll is 0-10, player takes enemy hit which is -5, if roll is 10-20, hit them to half health which is -10 to enemy 
+                        "dice":20, //place holder for enemy random dice generator from 1-20
+                        //if the enemy has remaining health, do this task again, and once the enemy dies
+                        "enemy_health":-500, //place holder for the for if statement when enemy reaches 0 health
+                        //if enemy hits, player health -
+                        "point_delta": 1,
+                    
+                        "content":"You won the 'Lone Achievement' with a Prototype weapon (Prototype Pharah: rocket launcher) and +45 chaos (which affects how you interact with future NPCs, -5 charisma, and +10 stats to your choosing",
+                        "stat": 10, 
+                        "inventory": 1,
+                        "chaos": 45,
+                        "charisma": -5,
+                        //if input is one of the stats
+                        "input": "hp",
+                                "hp": 10, //adding +1 to base stat
+                                "health": 0, //reset health to 0, constructor... minus remainder health 
+                                "health": 500, //adding +50 to 100 base health
+                            "input": "damage",
+                                "damage": 10, 
+                                    
+                            "input": "dexterity",
+                                "dexterity": 10, 
+                                    
+                            "input": "accuracy",
+                                "accuracy": 10, 
+                                     
+                            "input": "strength",
+                                "strength": 10, 
+                                     
+                            "input": "intelligence",
+                                "intelligence": 10, 
+                                     
+                            "input": "charisma",
+                                "charisma": 10, 
+
+                            "stat": -10
+                },
+                {"input": "talk",
+                    "figure_explain": "You approach the unknown figure and begin to chat with them. You ask why they were not part of the family. The figure states that they found out that they were taken from birth and into a lab, as part of an experiment.",
+                    "figure_explain2": "All the experimentations were testing how they would be able to survive off of experimental chemicals, that's why I look the way I look, but I also have benefited from the chemicals because I was able to survive the meteor, along with having super strength and health.",
+                    "content": "As you get to know the figure more, you find out their name, which is P'yl, their age is the same as yours, and you and P'yl wish to have a new journey, either to build what remains on Earth or explore different planets and potentially find other life-beings either friendly or another human who survived and escaped.",
+                    "content": "You won the 'Family Forever Achievement' with a Prototype weapon (Prototype Junkrat: grenade launcher), charisma +20, intelligence +10, and stat +10.",
+                    "point_delta": 1,
+                    "stat": 10,
+                    "inventory": 1,
+                    "chaos": -5, //stats build off of
+                    "charisma": 20,
+                    "intelligence": 10,
+                    "input": "hp",
+                            "hp": 10, //adding +1 to base stat
+                            "health": 0, //reset health to 0, constructor... minus remainder health 
+                            "health": 500, //adding +50 to 100 base health
+                            "input": "damage",
+                                "damage": 10, 
+                                    
+                            "input": "dexterity",
+                                "dexterity": 10, 
+                                    
+                            "input": "accuracy",
+                                "accuracy": 10, 
+                                     
+                            "input": "strength",
+                                "strength": 10, 
+                                     
+                            "input": "intelligence",
+                                "intelligence": 10, 
+                                     
+                            "input": "charisma",
+                                "charisma": 10, 
+
+                            "stat": -10
+                }
+
+            ]}
+    }
 }
