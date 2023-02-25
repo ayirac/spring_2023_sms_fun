@@ -101,7 +101,7 @@
     "south": {
         
         "prompt": " entering south valley ",
-        "next state": "escort"
+        "next_state": "escort"
     
     },
 
@@ -140,7 +140,7 @@
     "stealth1": {
 
         "prompt": "successfully escorted elderman",
-        "next state": "planet a'pholi directions"
+        "next_state": "planet a'pholi directions"
     },
 
     "stealth2":{
@@ -151,37 +151,37 @@
     "west": {
 
         "prompt": "west state",
-        "next state": "beast"
+        "next_state": "beast"
 
     }, 
 
     "beast":{
 
         "prompt": " you are fighting a beast",
-        "next state": "battle state"
+        "next_state": "battle state"
     },
     
     "north": {
         
         "prompt": "You are entering a Mountainous landscape. pests are in view and seems like its the only path",
-        "next state": "pests"
+        "next_state": "pests"
     }, 
 
     "pests":{
 
         "prompt": "approaching pests",
-        "next state": "battle_state"
+        "next_state": "battle_state"
     },
 
     "fight_1_guard": {
         
         "prompt": "Fight_1_gaurd",
-        "next state": "a'Pholi_boss"
+        "next_state": "a'Pholi_boss"
     },  
 
     "fight_gaurds":{
         "prompt": "A'pholi gaurds",
-        "next state": "a'pholi_boss"
+        "next_state": "a'pholi_boss"
     },
     
     "a'pholi_boss": {
