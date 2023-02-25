@@ -4,34 +4,38 @@ from flask import request, g
 from flask_json import FlaskJSON, JsonError, json_response, as_json
 
 from tools.logging import logger
-from libs.player import player
+from character import player
 
 import json 
 import pickle
-import random
 
 
 yml_configs = {}
 with open('config.yml', 'r') as yml_file:
     yml_configs = yaml.safe_load(yml_file)
 
-with open('map.json', 'r') as map_file:
-    map = json.load(map_file)
 
 def handle_request():
     logger.debug(request.form)
     act = None
     if exists( f"users/{request.form['From']}.pkl") :
         with open(f"users/{request.form['From']}.pkl", 'rb') as p:
-            act = pickle.load(p) 
+            act = pickle.load(p)
+            logger.debug("user exists")
     else:
-        act = player(request.form['From'])
+        act = player(request.form['From'],0,100)
+        logger.debug("user doesnt exists creating player")
+    
+    logger.debug("calling act.get_output")
     output = act.get_output(request.form['Body'])
+    logger.debug("im here")
 
-    message = g.sms_client.messages.create(
-        body=output,
-        from_=yml_configs['twillio']['phone_number'], 
-        to=request.form['From'])
+    for o_msg in output:
+        logger.debug("returned from the character function")
+        message = g.sms_client.messages.create(
+                     body=o_msg,
+                     from_=yml_configs['twillio']['phone_number'],
+                     to=request.form['From'])
 
     with open(f"users/{request.form['From']}.pkl", 'wb') as p:
         pickle.dump(act, p)

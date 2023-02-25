@@ -1,79 +1,101 @@
 {
     "start": {
-
-        "prompt": "introduction", 
-        "weapons_available": [],
-        "next state": "escaping the meteor"
     
+        "prompt": "greetings traveler", 
+
+        "next_state": "escaping_the_meteor"
     }, 
           
-    "escaping the meteor": {
-        
+    "escaping_the_meteor": {
+
         "prompt": "escaping the meteor",
-        "next state": "planet a'pholi directions"
-    
+        "next_state": "planet a'pholi directions"
     },
 
     "planet a'pholi directions": {
-        "prompt": "LOCATED IN - -, in which direction would you like to explore?",
-        "next state": ["east", "west", "north", "south"]
+        
+        "prompt": "LOCATION UNKNOWN. In which direction would you like to explore? (east, west, north, south)",
+        "next_state": [
+                        {
+                            "prompt":"heading east",
+                            "input": "east",
+                            "next_state": "east"
+                        },
+                        {
+                            "prompt": "heading west",
+                            "input": "west",
+                            "next_state": "west"
+                        },
+                        {
+                            "prompt": "heading north",
+                            "input": "north",
+                            "next_state": "north"
+                        },
+                        {
+                            "prompt": "heading south",
+                            "input": "south",
+                            "next_state": "south"
+                        }
+                    ]           
     },
 
     "east": {
-        
-        "prompt": "entering the east jungle",
-        "next state": "east first enemy"
+    
+        "prompt": "A few hours have passed. A silhouette is seen from a distance. A figure is approaching closer and closer at an increasing pace. Figure is not a friendly and is charging. player chooses whether to attack enemy or communicate his way out of it. (fight or talk)",
+        "next_state": "east_first_enemy"
         
     }, 
 
-    "east first enemy": {
+    "east_first_enemy": {
 
-        "prompt":"east first enemy",
-
-        "content":{ 
-
-            "fight": {
-                "dialogue": "- east first enemy - ",
-                "friendly": false, 
-                "friendly_dialogue": "", 
-                "enemy": false, 
-                "enemy_dialogue": ""
-            },
-            "weapons_available": []
-        },
-
-        "next state": "east second enemy"
+        "prompt":"situation is tense.",
+        "next_state": [
+                    {
+                        "prompt": "(type, display stats, attack, inventory of next sequence)",
+                        "input": "fight",
+                        "next_state": "battle_state"
+                    },
+                    {
+                        "prompt": "attempting to de-escalate the situation",
+                        "input": "talk",
+                        "next_state": "dialogue1"
+                    }
+                ]           
 
     },
 
-    "east second enemy":{
+    "east_second_enemy":{
 
-        "prompt": "east second enemy state",
-        "content":{ 
-
-            "fight": {
-                "dialogue": " - enemy dialogue - "
-
-            },
-            "weapons_available": []
-        },
-
-        "next state": "east third enemy"
+        "prompt":"second enemy approaches. fight or talk?",
+        "next_state": [
+                    {
+                        "prompt":"[type, display stats, attack, inventory of next sequence]",
+                        "input": "fight",
+                        "next_state": "battle_state"
+                    },
+                    {
+                        "prompt": "attempting to de-escalate the situation",
+                        "input": "talk",
+                        "next_state": "dialogue1"
+                    }
+                ]           
     },
 
-    "east third enemy": {
+    "east_third_enemy": {
         
-        "prompt": "east third enemy state",
-
-        "content":{ 
-
-            "fight": {
-                "dialogue": " - enemy dialogue - "
-            },
-            "weapons_available": []
-        },
-
-        "next state": ["planet a'pholi directions","stealth", "guard"]
+        "prompt":"third enemy approaches",
+        "next_state": [
+                    {
+                        "prompt":"[type, display stats, attack, inventory of next sequence]",
+                        "input": "fight",
+                        "next_state": "battle_state"
+                    },
+                    {
+                        "prompt": "attempting to de-escalate the situation",
+                        "input": "talk",
+                        "next_state": "dialogue1"
+                    }
+                ]           
     },
 
     "south": {
@@ -84,28 +106,46 @@
     },
 
     "escort": {
-        "content":{ 
-
-            "fight": {
-                "dialogue": "- east first enemy - ",
-                "friendly": false, 
-                "friendly_dialogue": "", 
-                "enemy": false, 
-                "enemy_dialogue": ""
-            },
-            "stealth":{
-                "prompt": " - stealth mode -"
-            },
-            "weapons_available": []
-        },
-        
-        "next state": ["stealth", "gaurd"]
+        "prompt": "Choose to venture directly through dealth valley or a stealth approach. direct or stealth?",
+        "next_state":[
+                    {
+                        "prompt": "Chosen route: death valley",
+                        "input": "direct",
+                        "next_state": "death_valley"
+                    },
+                    {
+                        "prompt": "attempting to de-escalate the situation",
+                        "input": "stealth",
+                        "next_state": "stealth1"
+                    }
+                ] 
     },
 
-    "stealth": {
+    "dealth_valley":{
+        "promp": "chosen route: death valley. several minutes pass. an enemy is seen ahead. last opportunity to turn back. battle or stealth?",
+        "next_state": [
+                    {
+                        "prompt": "without having time to think the enemy shoots a projectile. you dodge, run towards and strike.",
+                        "input": "battle",
+                        "next_state": "battle_state"
+                    },
+                    {
+                        "prompt": "attempting to de-escalate the situation",
+                        "input": "stealth",
+                        "next_state": "stealth1"
+                    }
+                ]
+    },
 
-        "prompt": "stealth state",
-        "next state": "gaurd 1"
+    "stealth1": {
+
+        "prompt": "successfully escorted elderman",
+        "next state": "planet a'pholi directions"
+    },
+
+    "stealth2":{
+        "prompt": "stealthy steve moves stealthily",
+	"next_state": "fight_1_guard"
     },
 
     "west": {
@@ -117,42 +157,84 @@
 
     "beast":{
 
-        "prompt": "beast state",
-        "next state": "stealth"
+        "prompt": " you are fighting a beast",
+        "next state": "battle state"
     },
     
     "north": {
         
-        "prompt": "north state",
+        "prompt": "You are entering a Mountainous landscape. pests are in view and seems like its the only path",
         "next state": "pests"
     }, 
 
     "pests":{
 
-        "prompt": " pests state",
-        "next state": ["stealth", "guard"]
+        "prompt": "approaching pests",
+        "next state": "battle_state"
     },
 
-    "guard 1": {
+    "fight_1_guard": {
         
-        "prompt": "gaurd 1 state",
-        "next state": "A'Pholi boss"
+        "prompt": "Fight_1_gaurd",
+        "next state": "a'Pholi_boss"
     },  
 
-    "guards":{
+    "fight_gaurds":{
         "prompt": "A'pholi gaurds",
-        "next state": "a'pholi boss"
+        "next state": "a'pholi_boss"
     },
     
-    "a'pholi boss": {
+    "a'pholi_boss": {
         "prompt": "fighting boss a'pholi",
-        "content":{
-            "fight": {
-                "dialogue": " - enemy dialogue - "
-            }
-        },
-        "next state": "",
-        "end": "true"
-    }
+        "next_state": "repair_aircraft"
+    },
 
+    "battle_state":{
+        
+	"prompt": "battle state: options: fight, inventory, stats",
+        "next_state": [
+            {
+                "prompt": "you are attacking the enemy",
+                "input": "fight",
+                "next_state": "attack_state"
+            },
+            {
+                "prompt": "you are looking at inventory",
+                "input": "inventory",
+                "next_state": "inventory"
+            },
+	    {
+                "prompt": "displaying stats",
+                "input": "stats",
+                "next_state": "stats"
+            }
+        ],
+
+	"east_first_enemy": "east_second_enemy",
+	"east_second_enemy": "east_third_enemy",
+	"east_third_enemy": "fight_gaurds",
+	"beast": "stealth2",
+	"pests": "stealth2"
+
+    },
+
+    "attack_state":{
+        "prompt": "input next move",
+        "next_state": "battle_state"
+    },
+
+    "inventory":{
+        "prompt": "input next move",
+        "next_state": "battle_state"
+    },
+    "stats":{
+	"prompt": "input next move",
+        "next_state": "battle_state"
+    },
+    
+    "dialogue1":{
+
+        "prompt": "enemy dismisses peace talks and continues to charge foward and strikes. ",
+        "next_state":"battle_state"
+    }
 }
