@@ -6,6 +6,13 @@ MY_GAME_LOGIC = {}
 with open('map.json', 'r') as my_file:
     MY_GAME_LOGIC = json.loads(my_file.read())
 
+
+class Enemy():
+    def __init__(self, enemyName, enemyHP, enemyDMG):
+        self.name = enemyName
+        self.hp = enemyHP
+        self.damage = enemyDMG
+
 #base class
 class Character:
     def __init__(self, phone_number, attack, health):
@@ -41,6 +48,7 @@ class player(Character):
         self.battle_in_prog = False
         #self.battle_state_loop = False
         self.battle_state_counter = 0
+        self.currentEnemy = None
 
         self.state = "start"
         self.prev_state = None
@@ -52,9 +60,10 @@ class player(Character):
         if roll > 10:
             #you win fight
             self.battle_in_prog = False
-            return f'rolled a {roll} for a fatal blow'
+            resp = f"rolled a {roll} for a fatal blow against {self.currentEnemy.name}"
+            return resp
 
-        return "did not land fatal blow"
+        return f"rolled a {roll} but did  not land fatal blow"
 
 
     def get_inventory(self):
@@ -75,6 +84,8 @@ class player(Character):
 
             for next_state in MY_GAME_LOGIC[ self.state ]['next_state']:
                 if msg_input.lower() ==  next_state['input'].lower():
+                    if (next_state['next_state'] == 'battle_state' or next_state['next_state'] == 'dialogue1'):
+                        self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
                     self.state = next_state['next_state']
 
                     if self.state == "battle_state" and self.battle_state_counter is 0:
@@ -90,6 +101,7 @@ class player(Character):
                 return ['Ooops.. Not a valid choice...']
 
         while True:
+            print('Current state DEBUG: %s\n' % self.state)
             output.append( MY_GAME_LOGIC[ self.state ]['prompt'])
             if self.battle_state_counter == 0:
                 self.prev_state = self.state
@@ -99,12 +111,21 @@ class player(Character):
             
             if self.state == "attack_state":
                 output.append(self.attack_sequence())
-                if self.battle_in_prog is False:
-                    self.state = MY_GAME_LOGIC['battle_state'][self.prev_state]
-                    output.append( MY_GAME_LOGIC[ self.state ]['prompt'])
+                if self.battle_in_prog is True: # Fight ongoing
+                    # Scan array at MY_GAME_LOGIC['battle_state']['next_state'] for 'fight'
+                    for s in MY_GAME_LOGIC['battle_state']['next_state']:
+                        if (s['input'] == 'fight'):
+                            break
+                    self.state = s['next_state']
+                    output.append(s['prompt'])
                     self.battle_state_counter = 0
                     break
-
+                else:                           # Fight over, victory
+                    self.state = MY_GAME_LOGIC[self.currentEnemy.name]['victory_state']
+                    currentEnemy = None #  Remove the defeated enemy
+                    output.append(MY_GAME_LOGIC[self.state]['prompt'])
+                    break
+                
             elif self.state == "inventory":
                 output.append(self.get_inventory())
 
@@ -123,4 +144,3 @@ class Monster(Character):
 class Alien(Character):
     def __init__(self, attack, health):
         super().__init__(attack, health)
-
