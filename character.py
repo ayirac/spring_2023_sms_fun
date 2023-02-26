@@ -76,14 +76,38 @@ class player(Character):
         stats = f'hp: {self.hp} damage:{self.damage} dexterity: {self.dexterity} accuracy: {self.accuracy} strength: {self.strength} intelligence: {self.intelligence} charisma: {self.charisma} chaos: {self.chaos}'
 
         return stats
-
+    
+    # Parses a string to determine if input is valid utilizing difflib
+    # Input: A string that will be split & checked for valid input in the json game logic. A float for the acceptable ratio of how likely a match is
+    # Output: Index of the likely input or -1 if no input is found (implement default behaivor when the function returns -1)
+    def check_input(self, input, acceptableRatio)
+        sentenceTokens = input.split()
+        ratios = []
+        for t in sentenceTokens:
+            if isinstance(MY_GAME_LOGIC['self.state']['next_state'], str): # String, potentially useless depending on json implementation
+                matcher = difflib.SequenceMatcher(None, MY_GAME_LOGIC['self.state']['next_state'], t)
+                ratio = matcher.ratio()
+                if (ratio > acceptableRatio):
+                    return 0
+            else:                                                   # Array
+                for s in MY_GAME_LOGIC['self.state']['next_state']:
+                    matcher = difflib.SequenceMatcher(None, s['input'], t)
+                    ratio = matcher.ratio()
+                    ratios.append(ratio)
+                    print("%s vs %s\nRatio: %f" % (s['input'], t, ratio))
+                mostLikely = max(ratios)
+                print(mostLikely)
+                if (mostLikely > acceptableRatio):
+                    return ratios.index(mostLikely)
+        return -1
+    
     def get_output(self,msg_input):
         found_match = False
         output = []
         if type( MY_GAME_LOGIC[ self.state ]['next_state'] ) != str: # we have choices
 
             for next_state in MY_GAME_LOGIC[ self.state ]['next_state']:
-                if msg_input.lower() ==  next_state['input'].lower():
+                if (check_input(msg_input.lower(), 0.7)) != -1: # Input found above the threshold (NOT TESTED & Removed previous if check)       
                     if (next_state['next_state'] == 'battle_state' or next_state['next_state'] == 'dialogue1'):
                         self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
                     self.state = next_state['next_state']
