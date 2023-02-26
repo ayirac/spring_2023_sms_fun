@@ -60,7 +60,10 @@
                         "input": "talk",
                         "next_state": "dialogue1"
                     }
-                ]           
+                ],
+        "hp":  3,
+        "dmg": 5,
+        "victory_state": "east_second_enemy"
 
     },
 
@@ -78,7 +81,10 @@
                         "input": "talk",
                         "next_state": "dialogue1"
                     }
-                ]           
+                ],
+        "hp":  3,
+        "dmg": 5,
+        "victory_state": "east_third_enemy"
     },
 
     "east_third_enemy": {
@@ -95,13 +101,16 @@
                         "input": "talk",
                         "next_state": "dialogue1"
                     }
-                ]           
+                ],
+        "hp": 5,
+        "dmg":6,
+        "victory_state": "planet a'pholi directions"
     },
 
     "south": {
         
         "prompt": " entering south valley ",
-        "next_state": "escort"
+        "next state": "escort"
     
     },
 
@@ -140,7 +149,7 @@
     "stealth1": {
 
         "prompt": "successfully escorted elderman",
-        "next_state": "planet a'pholi directions"
+        "next state": "planet a'pholi directions"
     },
 
     "stealth2":{
@@ -151,37 +160,37 @@
     "west": {
 
         "prompt": "west state",
-        "next_state": "beast"
+        "next state": "beast"
 
     }, 
 
     "beast":{
 
         "prompt": " you are fighting a beast",
-        "next_state": "battle state"
+        "next state": "battle state"
     },
     
     "north": {
         
         "prompt": "You are entering a Mountainous landscape. pests are in view and seems like its the only path",
-        "next_state": "pests"
+        "next state": "pests"
     }, 
 
     "pests":{
 
         "prompt": "approaching pests",
-        "next_state": "battle_state"
+        "next state": "battle_state"
     },
 
     "fight_1_guard": {
         
         "prompt": "Fight_1_gaurd",
-        "next_state": "a'Pholi_boss"
+        "next state": "a'Pholi_boss"
     },  
 
     "fight_gaurds":{
         "prompt": "A'pholi gaurds",
-        "next_state": "a'pholi_boss"
+        "next state": "a'pholi_boss"
     },
     
     "a'pholi_boss": {
@@ -233,7 +242,6 @@
     },
     
     "dialogue1":{
-
         "prompt": "enemy dismisses peace talks and continues to charge foward and strikes. ",
         "next_state":"battle_state"
     }
