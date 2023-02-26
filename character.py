@@ -1,5 +1,6 @@
 import json
 import random
+import difflib
 from tools.logging import logger
 
 MY_GAME_LOGIC = {}
@@ -45,7 +46,7 @@ class player(Character):
         self.current_weapon = "sword"
         self.armor = "scrap metal"
         
-        self.battle_in_prog = False
+        self.battle_in_prog = 0
         #self.battle_state_loop = False
         self.battle_state_counter = 0
         self.currentEnemy = None
@@ -54,12 +55,11 @@ class player(Character):
         self.prev_state = None
         super().__init__(phone_number, attack, health)
     def attack_sequence(self):
-        
-        self.battle_in_prog = True
         roll = random.randint(0,20)
+        self.battle_in_prog = 1
         if roll > 10:
             #you win fight
-            self.battle_in_prog = False
+            self.battle_in_prog = 2
             resp = f"rolled a {roll} for a fatal blow against {self.currentEnemy.name}"
             return resp
 
@@ -77,27 +77,48 @@ class player(Character):
 
         return stats
 
+    # Parses a string to determine if input is valid utilizing difflib
+    # Input: A string that will be split & checked for valid input in the json game logic. A float for the acceptable ratio of how likely a match is
+    # Output: Index of the likely input or -1 if no input is found (implement default behaivor when the function returns -1)
+    def check_input(self, input, acceptableRatio):
+        sentenceTokens = input.split()
+        ratios = []
+        for t in sentenceTokens:
+            if isinstance(MY_GAME_LOGIC[self.state]['next_state'], str): # String, potentially useless depending on json implementation
+                matcher = difflib.SequenceMatcher(None, MY_GAME_LOGIC['self.state']['next_state'], t)
+                ratio = matcher.ratio()
+                if (ratio > acceptableRatio):
+                    return 0
+            else:                                                   # Array
+                for s in MY_GAME_LOGIC[self.state]['next_state']:
+                    matcher = difflib.SequenceMatcher(None, s['input'], t)
+                    ratio = matcher.ratio()
+                    ratios.append(ratio)
+                    print("%s vs %s\nRatio: %f" % (s['input'], t, ratio))
+                mostLikely = max(ratios)
+                print(mostLikely)
+                if (mostLikely > acceptableRatio):
+                    return ratios.index(mostLikely)
+        return -1
+
     def get_output(self,msg_input):
-        found_match = False
         output = []
         if type( MY_GAME_LOGIC[ self.state ]['next_state'] ) != str: # we have choices
+            
+            likelyInputIDX = self.check_input(msg_input.lower(), 0.7)
+            if (likelyInputIDX != -1): # Input found above the threshold (NOT TESTED & Removed previous if check)    
+                if (MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state'] == 'battle_state' or MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state'] == 'dialogue1'):
+                    self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
+                    print("DEBUG, ENEMY SELECTED!")
+                self.state = MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state']
 
-            for next_state in MY_GAME_LOGIC[ self.state ]['next_state']:
-                if msg_input.lower() ==  next_state['input'].lower():
-                    if (next_state['next_state'] == 'battle_state' or next_state['next_state'] == 'dialogue1'):
-                        self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
-                    self.state = next_state['next_state']
+                if self.state == "battle_state" and self.battle_state_counter is 0:
+                    self.battle_state_counter += 1
 
-                    if self.state == "battle_state" and self.battle_state_counter is 0:
-                        self.battle_state_counter += 1
-
-                    if 'point_delta' in  next_state:
-                        self.score += next_state['point_delta']
-                        output.append(f"Your Score {self.score}" )
-                    found_match = True
-                    break
-
-            if found_match == False:
+                if 'point_delta' in MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]:
+                    self.score += MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['point_delta']
+                    output.append(f"Your Score {self.score}" )
+            else:
                 return ['Ooops.. Not a valid choice...']
 
         while True:
@@ -111,7 +132,7 @@ class player(Character):
             
             if self.state == "attack_state":
                 output.append(self.attack_sequence())
-                if self.battle_in_prog is True: # Fight ongoing
+                if self.battle_in_prog == 1: # Fight ongoing
                     # Scan array at MY_GAME_LOGIC['battle_state']['next_state'] for 'fight'
                     for s in MY_GAME_LOGIC['battle_state']['next_state']:
                         if (s['input'] == 'fight'):
@@ -120,8 +141,9 @@ class player(Character):
                     output.append(s['prompt'])
                     self.battle_state_counter = 0
                     break
-                else:                           # Fight over, victory
+                if self.battle_in_prog == 0 or self.battle_in_prog == 2:                           # Fight over, victory
                     self.state = MY_GAME_LOGIC[self.currentEnemy.name]['victory_state']
+                    self.battle_in_prog = 0
                     currentEnemy = None #  Remove the defeated enemy
                     output.append(MY_GAME_LOGIC[self.state]['prompt'])
                     break
@@ -135,7 +157,6 @@ class player(Character):
             self.state = MY_GAME_LOGIC[ self.state]['next_state']
 
         return output
-
 
 class Monster(Character):
     def __init__(self, attack, health):
