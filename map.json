@@ -224,7 +224,7 @@
                 "input": "stealth",
                 "next_state": "fight_1_guard"
             }
-        ],
+        ]
     },
 
 
@@ -281,16 +281,7 @@
                 "input": "stats",
                 "next_state": "stats"
             }
-        ],
-
-	"east_first_enemy": "east_second_enemy",
-	"east_second_enemy": "east_third_enemy",
-	"east_third_enemy": "fight_gaurds",
-	"beast": "stealth2",
-	"pests": "stealth2"
-
-
-
+        ]
     },
 
     "attack_state":{
