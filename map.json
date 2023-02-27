@@ -1,20 +1,20 @@
 {
     "start": {
     
-        "prompt": "greetings traveler", 
+        "prompt": "Greetings traveler! The universe is filled with surprises of the unknown. Here is a story of a teenager who lived with his parents and lived a privileged life. Dad was a scientist, an engineer working for the space station. Mom worked in pharmaceuticals. Their house was on a hill, and they were going about their day, just like any ordinary day. A meteor had been brought to attention a few years ago and dad and his co-workers have been on meteor watch because one stray meteor is heading towards Earth. News of the meteor attracted attention, news anchors would give occasional updates of the meteor, while small groups around the world have exclaimed that the end is near. Majority of the population were not worried and continued living their life. Both parents leave to go to work and the player is left alone, on the weekend. The teen checks the news, and the news anchor alerts everyone with an important broadcast: “Incoming on Meteor watch, the meteor is directly heading to Earth and is traveling at an indescribable speed. Today is the day that the end is near. During the time of despair, the teenager has not prepared for this moment to come. On the bright side, the parents have prepared, due to their bunker mentality and paranoia. A few years ago, Dad showed the teenager a prototype aircraft, along with supplies for a future voyage into space. The teen decided to risk using the prototype aircraft, rather than doing nothing and waiting for the inevitable. ",
 
         "next_state": "escaping_the_meteor"
     }, 
           
     "escaping_the_meteor": {
 
-        "prompt": "escaping the meteor",
+        "prompt": "The teenager frantically pressing buttons to start up the aircraft, managed to successfully start up and traveled into space. The mixed emotions: of sorrow, pain, relief, and loneliness. The aircraft had enough fuel to send the teenager into space and with the risk of the prototype falling apart, was able to survive the travel. Suddenly, the force of the aircraft changed, and the aircraft had lost control, jostling the teenager in the cabin and a loud clang came from the aircraft, along with a loud thud from the teen. Movement has stopped, curiosity grew. The teen notices a suit in the aircraft and wears it. The suit was a prototype with the aircraft, allowing the user to communicate to aliens, and translate the teenager’s language into any alien language. There were modifications to the suit, such as a general map layout and storage for inventory. More modifications can be added, but the current modifications mentioned is what the teen has for the suit. The teen anxiously opens the aircraft door. A spectacle view of the sky and its vast emptiness with stars. In awe, the expression fades into confusion and despair because the aircraft is destroyed, along with being stranded on a planet with no awareness or having any familiarity of what Earth has.",
         "next_state": "planet a'pholi directions"
     },
 
     "planet a'pholi directions": {
         
-        "prompt": "LOCATION UNKNOWN. In which direction would you like to explore? (east, west, north, south)",
+        "prompt": "You will be the one to dictate the teenager and be journeying the unknown. You make it a goal to repair the aircraft to explore the unknown. The planet the player landed on is Earth adjacent. Landforms of mountains, valleys, desert, and jungles are present. The alien planet’s name is A’Pholi. A’Pholi being the ruler of the planet, having top-tier abilities and God-like strength, similarly to Apollo. The objective is to take down A’Pholi and repair the ship by fulfilling quests to repair the aircraft. LOCATION UNKNOWN. In which direction would you like to explore? (east, west, north, south)",
         "next_state": [
                         {
                             "prompt":"heading east",
@@ -41,22 +41,22 @@
 
     "east": {
     
-        "prompt": "A few hours have passed. A silhouette is seen from a distance. A figure is approaching closer and closer at an increasing pace. Figure is not a friendly and is charging. player chooses whether to attack enemy or communicate his way out of it. (fight or talk)",
+        "prompt": "We will be traveling to the jungle. The more you explore, a structure from afar is seen. You travel to the structure and the atmosphere feels empty. The strcture is abandoned, which you curiously explore and see a treasure chest at the end of the hallway. The structure is dark. You want to know what is inside and proceed to walk in. Beware of those lurking in the dark. An enemy surprises you. As the enemy is about to strike, you initiate the first move. (fight or talk)",
         "next_state": "east_first_enemy"
         
     }, 
 
     "east_first_enemy": {
 
-        "prompt":"situation is tense.",
+        "prompt":"You cautiously prepare, the enemy stares into your soul, ready to fight. (Type: 'fight' or 'talk')",
         "next_state": [
                     {
-                        "prompt": "(type, display stats, attack, inventory of next sequence)",
+                        "prompt": "Type: 'stats', 'fight', 'inventory' as your move.",
                         "input": "fight",
                         "next_state": "battle_state"
                     },
                     {
-                        "prompt": "attempting to de-escalate the situation",
+                        "prompt": "As an attempt to de-escalate the situation, you try to talk to the enemy. (Type: 'talk')",
                         "input": "talk",
                         "next_state": "dialogue1"
                     }
@@ -69,15 +69,15 @@
 
     "east_second_enemy":{
 
-        "prompt":"second enemy approaches. fight or talk?",
+        "prompt":"After you slain the first enemy, you explore in the darkness to find out what is in the treasure chest. An enemy screeches at you. You prepare for another battle. (Type: 'fight' or 'talk')",
         "next_state": [
                     {
-                        "prompt":"[type, display stats, attack, inventory of next sequence]",
+                        "prompt":"Type: 'stats', 'fight', 'inventory' as your move.",
                         "input": "fight",
                         "next_state": "battle_state"
                     },
                     {
-                        "prompt": "attempting to de-escalate the situation",
+                        "prompt": "As an attempt to de-escalate the situation, you try to talk to the enemy. (Type: 'talk')",
                         "input": "talk",
                         "next_state": "dialogue1"
                     }
@@ -89,49 +89,50 @@
 
     "east_third_enemy": {
         
-        "prompt":"third enemy approaches",
+        "prompt":"Once the second enemy is slain, you proceed to go closer to the treasure chest. The last enemy surprises you from the ceiling and landing on you. (Type: 'fight' or 'talk')",
         "next_state": [
                     {
-                        "prompt":"[type, display stats, attack, inventory of next sequence]",
+                        "prompt":"Type: 'stats', 'fight', 'inventory' as your move.",
                         "input": "fight",
                         "next_state": "battle_state"
                     },
                     {
-                        "prompt": "attempting to de-escalate the situation",
+                        "prompt": "As an attempt to de-escalate the situation, you try to talk to the enemy. (Type: 'talk')",
                         "input": "talk",
                         "next_state": "dialogue1"
                     }
                 ],
         "hp": 5,
         "dmg":6,
+        "reward_prompt": "You successfully slain the enemies and made it alive, and obtain two prototype weapons (Prototype Excal and Prototype 76Soldier), and +3 skill points added to _ .",
         "victory_state": "planet a'pholi directions"
     },
 
     "south": {
         
-        "prompt": " entering south valley ",
+        "prompt": "We will be traveling to the valley. The further you explore south, you notice a youthful alien walking with an elder alien. The young alien asks you a favor. The favor is to escort the elderly alien to their house, while the young alien completes their errand. While the young alien continues their errands, you escort the elder alien. The elder alien's route home is a dangerous path and it is your task to protect the elderly alien.",
         "next_state": "escort"
     
     },
 
     "escort": {
-        "prompt": "Choose to venture directly through dealth valley or a stealth approach. direct or stealth?",
+        "prompt": "Due to the path being dangerous, there most likely will be a harmful enemy in the way. Choose to venture directly through dealth valley or a stealth approach. (Type: 'direct' or 'stealth')",
         "next_state":[
                     {
-                        "prompt": "Chosen route: death valley",
+                        "prompt": "Choose the direct path (Type: 'direct')",
                         "input": "direct",
                         "next_state": "death_valley"
                     },
                     {
-                        "prompt": "attempting to de-escalate the situation",
+                        "prompt": "Attempting to de-escalate the situation, you and the elderly alien sneak around. (Type: 'stealth')",
                         "input": "stealth",
                         "next_state": "stealth1"
                     }
                 ] 
     },
 
-    "dealth_valley":{
-        "promp": "chosen route: death valley. several minutes pass. an enemy is seen ahead. last opportunity to turn back. battle or stealth?",
+    "death_valley":{
+        "prompt": "You chose the direct path, knowing it is a dangerous path. As you make it halfway into the route, an enemy is seen ahead. Last opportunity to turn back. (Type: 'battle' or 'stealth')",
         "next_state": [
                     {
                         "prompt": "without having time to think the enemy shoots a projectile. you dodge, run towards and strike.",
@@ -148,72 +149,158 @@
 
     "stealth1": {
 
-        "prompt": "successfully escorted elderman",
+        "prompt": "You warn the elder that the pathway home is dangerous and that you can escort them, in a safer path for both of you to be unharmed. As you walk with the elder alien, you find out their name, Y'Xor, and know more about his past. Y'Xor has never encountered a human before, and he was an inventor. He made gadgets and one of the major accomplishments he made was a teleportation device to teleport him back home or anywhere within the planet. Y'Xor's homeland was invaded by another alien faction and during the time, he had a family. The alien faction were mercenaries and stole one of Y'Xor's inventions, which happened to be the teleport device. Since the mercenaries were ruthless, they went on a killing spree, killing most of the villagers, along with his family, but kept him alive on one condition. Y'xor has to make an invention that is able to teleport more than one person and teleports them out of the planet. Y'xor was hurting from the pain that the mercenaries did to him, that he ran away, in a secluded area of the planet. Y'xor wanted to live life under the radar and had to start new, filled with sorrow and loneliness. While Y'Xor was living alone, a wanderer was traveling around Y'Xor's makeshift house. Y'Xor was anxious and thought it was the mercenaries. Y'Xor being paranoid, got a blade weapon and cautiously checked outside. The young child in front of him was curious and was picking crops from Y'Xor's garden, oblivious to who owns the land. Y'Xor noticed the child and the child reminded him of his son. The child talked t o Y'Xor and said to have no family either, and that they were ones to keep each other company. As Y'Xor's story concludes, you reach the end of the route and Y'Xor tells you to wait. Y'Xor walks into his house and shortly after, holds items. You successfully escorted the elderly alien! The elderly alien supplies you with gifts and waves goodbye.",
+        "reward_prompt": "You obtain resources for the aircraft (1/4), and +1 skill point stat on _",
         "next_state": "planet a'pholi directions"
     },
 
     "stealth2":{
-        "prompt": "stealthy steve moves stealthily",
-	"next_state": "fight_1_guard"
+        "prompt": "As you venture towards the fortress, you see a side path, where there are no guards, and is dark and narrow. You take the chance to explore in the path, not knowing where the path leads to. The long, narrow, dark tunnel leads to a opening. The opening has stairs leading all the way up to the top of the fortress. Is this where A'Pholi might be located? You venture up the stairs and step of a pressure plate, by accident. The small room you were in rotates and you now enter a grand room, where A'Pholi sits on a throne, as if A'Pholi was waiting for you.",
+	    "next_state": "a'pholi_boss"
     },
 
     "west": {
 
-        "prompt": "west state",
+        "prompt": "We will be traveling to the desert. As you explore the west, you see an alien injured, bitten leg from a giant beast-like creature. You are concerned and help the injured alien. The alien asks the player to fight the beast and collect the beast's heart so that the alien can eat it and heal immediately from the injuries. The reward is resources for aircraft and 1 prototype weapon. You see a beast-like creature in the distance and walk closer to it. The beast notices you and a battle initiates.",
         "next_state": "beast"
 
     }, 
 
     "beast":{
 
-        "prompt": " you are fighting a beast",
-        "next_state": "battle_state"
+        "prompt": "The beast has a thirst for hunting and immediately notices you. Scared, but confident, you relax and think about how to tactically approach the situation. You notice there is a wound around the neck and you make that the area of your first move. (Type: 'fight)",
+        "input": "fight",
+        "next_state": "battle_state",
+        "hp":10,
+        "dmg":10,
+        "enemy_hp":7,
+        "enemy_dmg":4,
+        "reward_prompt": "You successfully slain the beast and obtained resources for the aircraft (2/4 in progress of repairing aircraft), a prototype weapon (Prototype Genji Shuriken), and +1 skill point stat to _",
+        "victory_state": "planet a'pholi directions"
     },
     
     "north": {
         
-        "prompt": "You are entering a Mountainous landscape. pests are in view and seems like its the only path",
-        "next_state": "pests"
+        "prompt": "You will be traveling up the mountain. You encounter a shady alien, not knowing what the alien will do or say, you greets the alien cautiously. Alien stares at the player and asks for a favor. The alien's request: battle 3 bug-looking aliens (pests) and gather the resources from their body and give it to the alien in exchange for resources and items: resources for the aircraft. You encounter a pest",
+        "next_state": "first_pest"
     }, 
 
-    "pests":{
+    "first_pests":{
 
-        "prompt": "approaching pests",
-        "next_state": "battle_state"
+        "prompt": "The area is dimly lit, making it hard to see for pests, along with how dirty the environment is. As you scan the area, you see a figure running on the ground, hiding in a bush. As you go to check the bush, the pest comes out and is ready to attack. You get your weapon ready and attack the pest. ('fight')",
+        "input": "fight",
+        "next_state": "battle_state",
+        "hp":10,
+        "dmg":5,
+        "enemy_hp": 3,
+        "enemy_dmg":3,
+        "victory_state": "second_pest"
     },
+
+    "second_pest":{
+        
+        "prompt": "After you slain the first pest, you collect it's remains. You continue searching around the area and find the second pest with the back turned, you do a sneak attack on it. ('fight')",
+        "input": "fight",
+        "next_state": "battle_state",
+        "hp":10,
+        "dmg":5,
+        "enemy_hp": 3,
+        "enemy_dmg":3,
+        "victory_state": "second_pest"
+    },
+
+    "third_pest":{
+        
+        "prompt": "After you slain the second pest and collect the drop, you continue searching around the area. This pest is tricky because this pest likes to hang around cracks of the ground, making it hard to attack. Eventually, the pest tries to attack you, but you dodge and follow up with an attack. ('fight')",
+        "input": "fight",
+        "next_state": "battle_state",
+        "hp":10,
+        "dmg":5,
+        "enemy_hp": 3,
+        "enemy_dmg":3,
+        "reward_prompt": "You successfully slain the pests and obtained resources for the aircraft (3/4 in progress of repairing aircraft) and +1 skill point stat added to _.",
+        "victory_state": "planet a'pholi directions"
+    },
+
+
+    "complete_directions":{
+        "prompt": "Now that you have successfully explored all the directions: north, east, south, and west, you explore the central area of A'Pholi's planet. A'Pholi became the new leader by defeating the previous leader and ruled the planet for many years. A'Pholi resides in a grand fortress with security guards patrolling the outskirts of the fortress. The fortress is filled with riches and a surplus of supplies and resources, where you are able to gather the resources to repair the aircraft. But before you are able to repair the aircraft, you have to fight A'Pholi. You have the option to stealth inside the fortress, avoiding the guards, or take the main path and fight anything that's in your path. ('fight' or 'stealth')",
+        "next_state":[
+            {
+                "prompt": "without having time to think the enemy shoots a projectile. you dodge, run towards and strike.",
+                "input": "fight",
+                "next_state": "battle_state"
+            },
+            {
+                "prompt": "attempting to de-escalate the situation",
+                "input": "stealth",
+                "next_state": "stealth2"
+            }
+        ],
+        "hp":20,
+        "dmg":10,
+        "enemy_hp":5,
+        "enemy_dmg":5,
+        "victory_state": "fight_1_guard"
+    },
+
 
     "fight_1_guard": {
         
-        "prompt": "Fight_1_gaurd",
-        "next_state": "a'pholi_boss"
+        "prompt": "The first guard notices you, ready to defend. You ready your weapon. The guard tries to shield-bash you to lose your stance, but you're agile enough to dodge. While the guard is standing still for a short moment, you attack. ('fight')",
+        "input": "fight",
+        "next_state": "battle_state",
+        "hp":10,
+        "dmg":5,
+        "enemy_hp": 3,
+        "enemy_dmg":3,
+        "victory_state": "fight_2_guard"
     },  
 
-    "fight_gaurds":{
-        "prompt": "A'pholi gaurds",
-        "next state": "a'pholi_boss"
+    "fight_2_guard":{
+        "prompt": "The fighting caught attention of another guard and runs towards you. As your initial instinct, you block and counter. ('fight')",
+        "input": "fight",
+        "next_state": "battle_state",
+        "hp":10,
+        "dmg":5,
+        "enemy_hp": 3,
+        "enemy_dmg":3,
+        "victory_state": "a'pholi_boss"
     },
     
     "a'pholi_boss": {
-        "prompt": "fighting boss a'pholi",
-        "next_state": "repair_aircraft"
+        "prompt": "A'Pholi's expression was a bit of shock because it is probably his first time seeing a human. Shortly, A'Pholi's expression fades away and does not see me as a threat and gets up from his throne. Due to A'Pholi having god-like abilities and immense strength, A'Pholi intimidates you, leaving you frozen for a moment and A'Pholi is ready to strike. All of a sudden, you get an adrenaline rush, having more health and damage and react quickly to make the first move ('fight')",
+        "input": "fight",
+        "next_state": "battle_state",
+        "hp":30,
+        "dmg":15,
+        "enemy_hp": 20,
+        "enemy_dmg": 6,
+        "reward_prompt": "As you slain the leader, A'Pholi, you conquer the planet and become the new leader. You gain a plentiful amount of resources and those resources, along with the ones that were gained throughout the missions, all collectively repair the aircraft. You gain +5 stats on _,_",
+        "victory_state": "repair_aircraft"
     },
+
+    "repair_aircraft":{
+        "prompt": "You reflect on the adventures that you experienced, living as the teen, and decides to take a trip down memory lane, the dying planet, Earth. Years go by, and the teenager became an adult, due to the many adventures and exploration. The player goes in the aircraft and directs travel to Earth. Aircraft survives and player lands on the base of where their house was located. All remnants of the house were mostly destroyed, with a few objects kept intact. One of the objects that remained was a safe. The player checks on the safe and surprisingly was unlocked. There was currency, valuables, and a folder. The folder held secrets to future plans of what Dad was working on, along with what Mom was working on. What was found out after looking through the items in the safe was a surprise, a secret that the parents hid from the now young adult had piqued interest. The interesting item in the safe happens to be a family photo. There was a stain on the family photo, covering a figure. While smudging off the stain, taking a closer inspection, it seemed to be another family member. The family member seemed to be around the same age as the teenager then. It was a shocking revelation to find out that there was another sibling, rather than being the only child. The young adult had many questions and feelings, some of which cannot be answered, due to deceased parents. Many questions rose: Why were they hiding the fact that I have a sibling?, Who is the sibling?, Why did I never meet them?, Why were they not a part of the family? The emotions of the young adult were racing, and completely stopped when a figure from the distance showed up. Why is there a figure? How did they survive the meteor? The figure looked mutilated and had a missing arm and nose. The young adult was shocked and cautiously backed away from the figure. The figure yells the young adult’s name. The young adult was left in confusion, whether to fight or be amicable and converse with the figure. The young adult did not know if the figure could be hostile. As the young adult was preparing to attack, the unknown figure comes closer. The figure says, “I’ve been looking for you, my long-lost sibling”. Whether the young believe what the unknown figure said, is still deciding on whether to fight the figure or talk to the figure.",
+    },
+
 
     "battle_state":{
         
-	"prompt": "battle state: options: fight, inventory, stats",
+	"prompt": "battle state options: fight, inventory, stats",
         "next_state": [
             {
-                "prompt": "you are attacking the enemy",
+                "prompt": "you are attacking the enemy ('fight')",
                 "input": "fight",
                 "next_state": "attack_state"
             },
             {
-                "prompt": "you are looking at inventory",
+                "prompt": "you are looking at inventory ('inventory')",
                 "input": "inventory",
                 "next_state": "inventory"
             },
 	    {
-                "prompt": "displaying stats",
+                "prompt": "displaying stats ('stats')",
                 "input": "stats",
                 "next_state": "stats"
             }
@@ -224,6 +311,8 @@
 	"east_third_enemy": "fight_gaurds",
 	"beast": "stealth2",
 	"pests": "stealth2"
+
+
 
     },
 
