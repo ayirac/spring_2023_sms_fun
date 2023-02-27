@@ -50,6 +50,7 @@ class player(Character):
         #self.battle_state_loop = False
         self.battle_state_counter = 0
         self.currentEnemy = None
+        self.last_prompt = None
 
         self.state = "start"
         self.prev_state = None
@@ -83,6 +84,7 @@ class player(Character):
     def check_input(self, input, acceptableRatio):
         sentenceTokens = input.split()
         ratios = []
+        promptRatios = []
         for t in sentenceTokens:
             if isinstance(MY_GAME_LOGIC[self.state]['next_state'], str): # String, potentially useless depending on json implementation
                 matcher = difflib.SequenceMatcher(None, MY_GAME_LOGIC['self.state']['next_state'], t)
@@ -92,12 +94,17 @@ class player(Character):
             else:                                                   # Array
                 for s in MY_GAME_LOGIC[self.state]['next_state']:
                     matcher = difflib.SequenceMatcher(None, s['input'], t)
+                    matcherPrompt = difflib.SequenceMatcher(None, 'prompt', t)
+                    ratioPrompt = matcherPrompt.ratio()
+                    promptRatios.append(ratioPrompt)
                     ratio = matcher.ratio()
                     ratios.append(ratio)
-                    print("%s vs %s\nRatio: %f" % (s['input'], t, ratio))
                 mostLikely = max(ratios)
-                print(mostLikely)
-                if (mostLikely > acceptableRatio):
+                mostLikelyPrompt = max(promptRatios)
+                # Check if 'prompt' was attempted to be typed, in future change to check for a 'global_actions' array for more functionality
+                if (mostLikelyPrompt > acceptableRatio):
+                    return -2 # -2 stands for the 'output last prompt'
+                elif (mostLikely > acceptableRatio):
                     return ratios.index(mostLikely)
         return -1
 
@@ -106,7 +113,7 @@ class player(Character):
         if type( MY_GAME_LOGIC[ self.state ]['next_state'] ) != str: # we have choices
             
             likelyInputIDX = self.check_input(msg_input.lower(), 0.7)
-            if (likelyInputIDX != -1): # Input found above the threshold (NOT TESTED & Removed previous if check)    
+            if (likelyInputIDX >= 0): # Input found above the threshold (NOT TESTED & Removed previous if check)    
                 if (MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state'] == 'battle_state' or MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state'] == 'dialogue1'):
                     self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
                     print("DEBUG, ENEMY SELECTED!")
@@ -118,6 +125,13 @@ class player(Character):
                 if 'point_delta' in MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]:
                     self.score += MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['point_delta']
                     output.append(f"Your Score {self.score}" )
+            elif (likelyInputIDX == -2): ## Print last prompt saved in history, no state change
+               if (self.last_prompt != None):
+                    resp = self.last_prompt.copy()
+                    resp.insert(0, 'Last prompt:')
+                    return resp
+               else:
+                    return ['No prompt saved in history!']
             else:
                 return ['Ooops.. Not a valid choice...']
 
@@ -155,7 +169,7 @@ class player(Character):
                 output.append(self.get_stats())
 
             self.state = MY_GAME_LOGIC[ self.state]['next_state']
-
+        self.last_prompt = output
         return output
 
 class Monster(Character):
