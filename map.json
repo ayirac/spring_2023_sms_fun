@@ -61,8 +61,8 @@
                         "next_state": "dialogue1"
                     }
                 ],
-        "hp":  3,
-        "dmg": 5,
+        "hp":  100,
+        "dmg": 10,
         "victory_state": "east_second_enemy"
 
     },
@@ -82,8 +82,8 @@
                         "next_state": "dialogue1"
                     }
                 ],
-        "hp":  3,
-        "dmg": 5,
+        "hp":  100,
+        "dmg": 10,
         "victory_state": "east_third_enemy"
     },
 
@@ -102,8 +102,8 @@
                         "next_state": "dialogue1"
                     }
                 ],
-        "hp": 5,
-        "dmg":6,
+        "hp": 100,
+        "dmg": 10,
         "reward_prompt": "You successfully slain the enemies and made it alive, and obtain two prototype weapons (Prototype Excal and Prototype 76Soldier), and +3 skill points added to _ .",
         "victory_state": "planet a'pholi directions"
     },
@@ -151,12 +151,8 @@
 
         "prompt": "You warn the elder that the pathway home is dangerous and that you can escort them, in a safer path for both of you to be unharmed. As you walk with the elder alien, you find out their name, Y'Xor, and know more about his past. Y'Xor has never encountered a human before, and he was an inventor. He made gadgets and one of the major accomplishments he made was a teleportation device to teleport him back home or anywhere within the planet. Y'Xor's homeland was invaded by another alien faction and during the time, he had a family. The alien faction were mercenaries and stole one of Y'Xor's inventions, which happened to be the teleport device. Since the mercenaries were ruthless, they went on a killing spree, killing most of the villagers, along with his family, but kept him alive on one condition. Y'xor has to make an invention that is able to teleport more than one person and teleports them out of the planet. Y'xor was hurting from the pain that the mercenaries did to him, that he ran away, in a secluded area of the planet. Y'xor wanted to live life under the radar and had to start new, filled with sorrow and loneliness. While Y'Xor was living alone, a wanderer was traveling around Y'Xor's makeshift house. Y'Xor was anxious and thought it was the mercenaries. Y'Xor being paranoid, got a blade weapon and cautiously checked outside. The young child in front of him was curious and was picking crops from Y'Xor's garden, oblivious to who owns the land. Y'Xor noticed the child and the child reminded him of his son. The child talked t o Y'Xor and said to have no family either, and that they were ones to keep each other company. As Y'Xor's story concludes, you reach the end of the route and Y'Xor tells you to wait. Y'Xor walks into his house and shortly after, holds items. You successfully escorted the elderly alien! The elderly alien supplies you with gifts and waves goodbye.",
         "reward_prompt": "You obtain resources for the aircraft (1/4), and +1 skill point stat on _",
+	"point_delta": 1,
         "next_state": "planet a'pholi directions"
-    },
-
-    "stealth2":{
-        "prompt": "As you venture towards the fortress, you see a side path, where there are no guards, and is dark and narrow. You take the chance to explore in the path, not knowing where the path leads to. The long, narrow, dark tunnel leads to a opening. The opening has stairs leading all the way up to the top of the fortress. Is this where A'Pholi might be located? You venture up the stairs and step of a pressure plate, by accident. The small room you were in rotates and you now enter a grand room, where A'Pholi sits on a throne, as if A'Pholi was waiting for you.",
-	    "next_state": "a'pholi_boss"
     },
 
     "west": {
@@ -171,10 +167,8 @@
         "prompt": "The beast has a thirst for hunting and immediately notices you. Scared, but confident, you relax and think about how to tactically approach the situation. You notice there is a wound around the neck and you make that the area of your first move. (Type: 'fight)",
         "input": "fight",
         "next_state": "battle_state",
-        "hp":10,
-        "dmg":10,
-        "enemy_hp":7,
-        "enemy_dmg":4,
+        "hp":100,
+        "dmg":30,
         "reward_prompt": "You successfully slain the beast and obtained resources for the aircraft (2/4 in progress of repairing aircraft), a prototype weapon (Prototype Genji Shuriken), and +1 skill point stat to _",
         "victory_state": "planet a'pholi directions"
     },
@@ -190,10 +184,8 @@
         "prompt": "The area is dimly lit, making it hard to see for pests, along with how dirty the environment is. As you scan the area, you see a figure running on the ground, hiding in a bush. As you go to check the bush, the pest comes out and is ready to attack. You get your weapon ready and attack the pest. ('fight')",
         "input": "fight",
         "next_state": "battle_state",
-        "hp":10,
-        "dmg":5,
-        "enemy_hp": 3,
-        "enemy_dmg":3,
+        "hp":100,
+        "dmg":20,
         "victory_state": "second_pest"
     },
 
@@ -202,10 +194,8 @@
         "prompt": "After you slain the first pest, you collect it's remains. You continue searching around the area and find the second pest with the back turned, you do a sneak attack on it. ('fight')",
         "input": "fight",
         "next_state": "battle_state",
-        "hp":10,
-        "dmg":5,
-        "enemy_hp": 3,
-        "enemy_dmg":3,
+        "hp":100,
+        "dmg":20,
         "victory_state": "second_pest"
     },
 
@@ -214,10 +204,8 @@
         "prompt": "After you slain the second pest and collect the drop, you continue searching around the area. This pest is tricky because this pest likes to hang around cracks of the ground, making it hard to attack. Eventually, the pest tries to attack you, but you dodge and follow up with an attack. ('fight')",
         "input": "fight",
         "next_state": "battle_state",
-        "hp":10,
-        "dmg":5,
-        "enemy_hp": 3,
-        "enemy_dmg":3,
+        "hp":100,
+        "dmg":20,
         "reward_prompt": "You successfully slain the pests and obtained resources for the aircraft (3/4 in progress of repairing aircraft) and +1 skill point stat added to _.",
         "victory_state": "planet a'pholi directions"
     },
@@ -227,21 +215,16 @@
         "prompt": "Now that you have successfully explored all the directions: north, east, south, and west, you explore the central area of A'Pholi's planet. A'Pholi became the new leader by defeating the previous leader and ruled the planet for many years. A'Pholi resides in a grand fortress with security guards patrolling the outskirts of the fortress. The fortress is filled with riches and a surplus of supplies and resources, where you are able to gather the resources to repair the aircraft. But before you are able to repair the aircraft, you have to fight A'Pholi. You have the option to stealth inside the fortress, avoiding the guards, or take the main path and fight anything that's in your path. ('fight' or 'stealth')",
         "next_state":[
             {
-                "prompt": "without having time to think the enemy shoots a projectile. you dodge, run towards and strike.",
+                "prompt": "Without having time to think the enemy shoots a projectile. you dodge, run towards and strike.",
                 "input": "fight",
-                "next_state": "battle_state"
+                "next_state": "fight_1_guard"
             },
             {
                 "prompt": "attempting to de-escalate the situation",
                 "input": "stealth",
-                "next_state": "stealth2"
+                "next_state": "fight_1_guard"
             }
         ],
-        "hp":20,
-        "dmg":10,
-        "enemy_hp":5,
-        "enemy_dmg":5,
-        "victory_state": "fight_1_guard"
     },
 
 
@@ -250,10 +233,8 @@
         "prompt": "The first guard notices you, ready to defend. You ready your weapon. The guard tries to shield-bash you to lose your stance, but you're agile enough to dodge. While the guard is standing still for a short moment, you attack. ('fight')",
         "input": "fight",
         "next_state": "battle_state",
-        "hp":10,
-        "dmg":5,
-        "enemy_hp": 3,
-        "enemy_dmg":3,
+        "hp":150,
+        "dmg":25,
         "victory_state": "fight_2_guard"
     },  
 
@@ -261,10 +242,8 @@
         "prompt": "The fighting caught attention of another guard and runs towards you. As your initial instinct, you block and counter. ('fight')",
         "input": "fight",
         "next_state": "battle_state",
-        "hp":10,
-        "dmg":5,
-        "enemy_hp": 3,
-        "enemy_dmg":3,
+        "hp":150,
+        "dmg":25,
         "victory_state": "a'pholi_boss"
     },
     
@@ -272,10 +251,8 @@
         "prompt": "A'Pholi's expression was a bit of shock because it is probably his first time seeing a human. Shortly, A'Pholi's expression fades away and does not see me as a threat and gets up from his throne. Due to A'Pholi having god-like abilities and immense strength, A'Pholi intimidates you, leaving you frozen for a moment and A'Pholi is ready to strike. All of a sudden, you get an adrenaline rush, having more health and damage and react quickly to make the first move ('fight')",
         "input": "fight",
         "next_state": "battle_state",
-        "hp":30,
-        "dmg":15,
-        "enemy_hp": 20,
-        "enemy_dmg": 6,
+        "hp":200,
+        "dmg":30,
         "reward_prompt": "As you slain the leader, A'Pholi, you conquer the planet and become the new leader. You gain a plentiful amount of resources and those resources, along with the ones that were gained throughout the missions, all collectively repair the aircraft. You gain +5 stats on _,_",
         "victory_state": "repair_aircraft"
     },
