@@ -8,11 +8,11 @@ with open('map.json', 'r') as my_file:
     MY_GAME_LOGIC = json.loads(my_file.read())
 
 class Enemy():
-    def __init__(self, enemyName, enemyHP, enemyBaseDMG, enemyCRIT=None):
+    def __init__(self, enemyName, enemyHP, enemyBaseDMG):
         self.name = enemyName
         self.hp = enemyHP
         self.damage = enemyBaseDMG
-        self.crit = enemyCRIT
+      
         self.alive = True
 
     def enemy_attack(self, main_character):
@@ -67,11 +67,11 @@ class player(Character):
             crit_dmg = self.damage
             crit_chance = random.randint(1, 10)
         
-        if crit_chance == 1:
-            crit_dmg *= 2
+            if crit_chance == 1:
+                crit_dmg *= 2
      
-        self.currentEnemy.take_damage(crit_dmg)
-        return self.currentEnemy.alive
+            self.currentEnemy.take_damage(crit_dmg)
+            return self.currentEnemy.alive
 
     def take_damage(self, damage):
         self.health -= damage
