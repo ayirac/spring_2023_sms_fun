@@ -64,8 +64,8 @@ class player(Character):
         super().__init__(phone_number, attack, health)
         
         def player_attack(self):
-        crit_dmg = self.damage
-        crit_chance = random.randint(1, 10)
+            crit_dmg = self.damage
+            crit_chance = random.randint(1, 10)
         
         if crit_chance == 1:
             crit_dmg *= 2
@@ -131,9 +131,6 @@ class player(Character):
                     print("DEBUG, ENEMY SELECTED!")
                 self.state = MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state']
 
-                if self.state == "battle_state" and self.battle_state_counter is 0:
-                    self.battle_state_counter += 1
-
                 if 'point_delta' in MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]:
                     self.score += MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['point_delta']
                     output.append(f"Your Score {self.score}" )
@@ -151,8 +148,6 @@ class player(Character):
         while True:
             print('Current state DEBUG: %s\n' % self.state)
             output.append( MY_GAME_LOGIC[ self.state ]['prompt'])
-            if self.battle_state_counter == 0:
-                self.prev_state = self.state
 
             if 'next_state' not in MY_GAME_LOGIC[ self.state ] or type( MY_GAME_LOGIC[ self.state ]['next_state'] ) != str:
                 break
