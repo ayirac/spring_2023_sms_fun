@@ -7,13 +7,29 @@ MY_GAME_LOGIC = {}
 with open('map.json', 'r') as my_file:
     MY_GAME_LOGIC = json.loads(my_file.read())
 
-
 class Enemy():
-    def __init__(self, enemyName, enemyHP, enemyDMG):
+    def __init__(self, enemyName, enemyHP, enemyBaseDMG, enemyCRIT=None):
         self.name = enemyName
         self.hp = enemyHP
-        self.damage = enemyDMG
+        self.damage = enemyBaseDMG
+        self.crit = enemyCRIT
+        self.alive = True
 
+    def enemy_attack(self, main_character):
+        crit_dmg = self.damage
+        crit_chance = random.randint(1, 10)
+        
+        if crit_chance == 1:
+            self.damage *= 2
+
+        main_character.take_damage(crit_dmg)
+        return main_character.alive
+
+    def take_damage(self, damage):
+        self.hp -= damage
+        if self.hp <= 0:
+            self.hp = 0
+            self.alive = False
 #base class
 class Character:
     def __init__(self, phone_number, attack, health):
@@ -22,7 +38,7 @@ class Character:
         self.attack = attack
         self.health = health
 
-    def attack_sequence():
+    def player_attack():
         pass
     def dialogue():
         pass
@@ -33,39 +49,35 @@ class player(Character):
     def __init__(self, phone_number, attack, health):
 
         self.phone = phone_number
-        self.hp = 5
         self.damage = 5
-        self.dexterity = 5
-        self.accuracy = 5
-        self.strength = 5
-        self.intelligence = 5
-        self.charisma = 5
-        self.chaos = 5
+        
         self.inventory = ["sword"]
         
         self.current_weapon = "sword"
         self.armor = "scrap metal"
         
-        self.battle_in_prog = 0
-        #self.battle_state_loop = False
-        self.battle_state_counter = 0
+        self.alive = True
         self.currentEnemy = None
         self.last_prompt = None
 
         self.state = "start"
-        self.prev_state = None
         super().__init__(phone_number, attack, health)
-    def attack_sequence(self):
-        roll = random.randint(0,20)
-        self.battle_in_prog = 1
-        if roll > 10:
-            #you win fight
-            self.battle_in_prog = 2
-            resp = f"rolled a {roll} for a fatal blow against {self.currentEnemy.name}"
-            return resp
+        
+        def player_attack(self):
+        crit_dmg = self.damage
+        crit_chance = random.randint(1, 10)
+        
+        if crit_chance == 1:
+            crit_dmg *= 2
+     
+        self.currentEnemy.take_damage(crit_dmg)
+        return self.currentEnemy.alive
 
-        return f"rolled a {roll} but did  not land fatal blow"
-
+    def take_damage(self, damage):
+        self.health -= damage
+        if self.health <= 0:
+            self.health = 0
+            self.alive = False
 
     def get_inventory(self):
         inv = ""
@@ -125,6 +137,7 @@ class player(Character):
                 if 'point_delta' in MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]:
                     self.score += MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['point_delta']
                     output.append(f"Your Score {self.score}" )
+                    
             elif (likelyInputIDX == -2): ## Print last prompt saved in history, no state change
                if (self.last_prompt != None):
                     resp = self.last_prompt.copy()
@@ -145,21 +158,41 @@ class player(Character):
                 break
             
             if self.state == "attack_state":
-                output.append(self.attack_sequence())
-                if self.battle_in_prog == 1: # Fight ongoing
-                    # Scan array at MY_GAME_LOGIC['battle_state']['next_state'] for 'fight'
+                #player attacks
+                #method returns if enemy is alive
+                enemy_alive = self.player_attack()
+                #enemy attacks
+                player_alive = self.currentEnemy.enemy_attack(self)
+
+                if enemy_alive is True and player_alive is True:
+                    # Scan array at MY_GAME_LOGIC['battle_state']['next_state'] for 'fight'     
                     for s in MY_GAME_LOGIC['battle_state']['next_state']:
                         if (s['input'] == 'fight'):
                             break
                     self.state = s['next_state']
                     output.append(s['prompt'])
-                    self.battle_state_counter = 0
                     break
-                if self.battle_in_prog == 0 or self.battle_in_prog == 2:                           # Fight over, victory
+
+                elif enemy_alive is False:
+                    # Fight over, victory
                     self.state = MY_GAME_LOGIC[self.currentEnemy.name]['victory_state']
-                    self.battle_in_prog = 0
-                    currentEnemy = None #  Remove the defeated enemy
+                    # resetting health
+                    self.health = 100
+
                     output.append(MY_GAME_LOGIC[self.state]['prompt'])
+                    output.append(f'you defeated {self.currentEnemy.name}')
+                    self.currentEnemy = None #  Remove the defeated enemy
+                    break
+
+                elif player_alive is False:
+                    #player dies
+                    #reset enemy and player health
+                    self.currentEnemy.hp = 100
+                    self.health = 100
+                    self.alive = True
+                    output.append("you lost. try again")
+                    #trs to battle state again
+                    self.state = MY_GAME_LOGIC[self.currentEnemy]['next_state']
                     break
                 
             elif self.state == "inventory":
@@ -171,11 +204,3 @@ class player(Character):
             self.state = MY_GAME_LOGIC[ self.state]['next_state']
         self.last_prompt = output
         return output
-
-class Monster(Character):
-    def __init__(self, attack, health):
-        super().__init__(attack, health)
-
-class Alien(Character):
-    def __init__(self, attack, health):
-        super().__init__(attack, health)
