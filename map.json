@@ -62,7 +62,7 @@
                     }
                 ],
         "hp":  100,
-        "dmg": 10,
+        "dmg": 5,
         "victory_state": "east_second_enemy"
 
     },
@@ -83,7 +83,7 @@
                     }
                 ],
         "hp":  100,
-        "dmg": 10,
+        "dmg": 5,
         "victory_state": "east_third_enemy"
     },
 
@@ -103,7 +103,7 @@
                     }
                 ],
         "hp": 100,
-        "dmg": 10,
+        "dmg": 5,
         "reward_prompt": "You successfully slain the enemies and made it alive, and obtain two prototype weapons (Prototype Excal and Prototype 76Soldier), and +3 skill points added to _ .",
         "victory_state": "planet a'pholi directions"
     },
@@ -168,7 +168,7 @@
         "input": "fight",
         "next_state": "battle_state",
         "hp":100,
-        "dmg":30,
+        "dmg":10,
         "reward_prompt": "You successfully slain the beast and obtained resources for the aircraft (2/4 in progress of repairing aircraft), a prototype weapon (Prototype Genji Shuriken), and +1 skill point stat to _",
         "victory_state": "planet a'pholi directions"
     },
@@ -185,7 +185,7 @@
         "input": "fight",
         "next_state": "battle_state",
         "hp":100,
-        "dmg":20,
+        "dmg":7,
         "victory_state": "second_pest"
     },
 
@@ -195,8 +195,8 @@
         "input": "fight",
         "next_state": "battle_state",
         "hp":100,
-        "dmg":20,
-        "victory_state": "second_pest"
+        "dmg":7,
+        "victory_state": "third_pest"
     },
 
     "third_pest":{
@@ -205,7 +205,7 @@
         "input": "fight",
         "next_state": "battle_state",
         "hp":100,
-        "dmg":20,
+        "dmg":7,
         "reward_prompt": "You successfully slain the pests and obtained resources for the aircraft (3/4 in progress of repairing aircraft) and +1 skill point stat added to _.",
         "victory_state": "planet a'pholi directions"
     },
@@ -234,7 +234,7 @@
         "input": "fight",
         "next_state": "battle_state",
         "hp":150,
-        "dmg":25,
+        "dmg":10,
         "victory_state": "fight_2_guard"
     },  
 
@@ -243,7 +243,7 @@
         "input": "fight",
         "next_state": "battle_state",
         "hp":150,
-        "dmg":25,
+        "dmg":10,
         "victory_state": "a'pholi_boss"
     },
     
@@ -252,7 +252,7 @@
         "input": "fight",
         "next_state": "battle_state",
         "hp":200,
-        "dmg":30,
+        "dmg":15,
         "reward_prompt": "As you slain the leader, A'Pholi, you conquer the planet and become the new leader. You gain a plentiful amount of resources and those resources, along with the ones that were gained throughout the missions, all collectively repair the aircraft. You gain +5 stats on _,_",
         "victory_state": "repair_aircraft"
     },
