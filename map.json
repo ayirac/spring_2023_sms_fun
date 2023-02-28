@@ -163,7 +163,11 @@
                         "input": "stealth",
                         "next_state": "stealth1"
                     }
-                ]
+                ],
+	"hp":100,
+        "dmg":6,
+        "reward_prompt": "You slay the beast and gain +1 skill point stat to damage",
+        "victory_state": "planet a'pholi directions"
     },
 
     "stealth1": {
@@ -205,7 +209,7 @@
         "next_state": "first_pest"
     }, 
 
-    "first_pests":{
+    "first_pest":{
 
         "prompt": "The area is dimly lit, making it hard to see for pests, along with how dirty the environment is. As you scan the area, you see a figure running on the ground, hiding in a bush. As you go to check the bush, the pest comes out and is ready to attack. You get your weapon ready and attack the pest. ('fight')",
         "input": "fight",
