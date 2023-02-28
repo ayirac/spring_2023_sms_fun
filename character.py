@@ -95,7 +95,7 @@ class player(Character):
         return inv
 
     def get_stats(self):
-        stats = f'hp: {self.hp} damage:{self.damage} dexterity: {self.dexterity} accuracy: {self.accuracy} strength: {self.strength} intelligence: {self.intelligence} charisma: {self.charisma} chaos: {self.chaos}'
+        stats = f'hp: {self.health} damage: {self.damage}'
 
         return stats
 
