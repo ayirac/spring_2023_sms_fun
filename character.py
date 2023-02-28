@@ -163,7 +163,6 @@ class player(Character):
                 return output
             
         if type( MY_GAME_LOGIC[ self.state ]['next_state'] ) != str: # we have choices
-            
             likelyInputIDX = self.check_input(msg_input.lower(), 0.7)
             if (likelyInputIDX >= 0): # Input found above the threshold (NOT TESTED & Removed previous if check)    
                 if (MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state'] == 'battle_state' or MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state'] == 'dialogue1'):
@@ -178,8 +177,11 @@ class player(Character):
                     self.visited_states.add(self.state)
                         
                 self.state = MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state']
-                print("MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state'] is: " + self.state)
-                    
+                myV = MY_GAME_LOGIC[ self.state ]['next_state']
+                if (myV == 'battle_state' or myV == 'dialogue1' or myV == 'dialogue2' or myV == 'dialogue3' or myV == 'beast'):
+                    if (myV == 'beast'):
+                        self.currentEnemy = Enemy(myV, MY_GAME_LOGIC[myV]['hp'], MY_GAME_LOGIC[myV]['dmg'])
+                    print("DEBUG, ENEMY SELECTED!")                    
             elif (likelyInputIDX == -2): ## Print last prompt saved in history, no state change
                if (self.last_prompt != None):
                     resp = self.last_prompt.copy()
@@ -192,8 +194,9 @@ class player(Character):
         else:
             myV = MY_GAME_LOGIC[ self.state ]['next_state']
             if (myV == 'battle_state' or myV == 'dialogue1' or myV == 'dialogue2' or myV == 'dialogue3' or myV == 'beast'):
-                self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
-                print("DEBUG, ENEMY SELECTED!")
+                if (self.currentEnemy == None):
+                    self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
+                    print("DEBUG, ENEMY SELECTED!")
 
         while True:
             print('Current state DEBUG: %s\n' % self.state)
