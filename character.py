@@ -22,7 +22,7 @@ class Enemy():
             self.damage *= 2
 
         main_character.take_damage(crit_dmg)
-        return main_character.alive
+        return f'Enemy landed {crit_dmg} damage. Your health is now {self.health}'
 
     def take_damage(self, damage):
         self.hp -= damage
@@ -58,6 +58,7 @@ class player(Character):
         self.alive = True
         self.currentEnemy = None
         self.last_prompt = None
+        self.score = 0
 
         self.state = "main_menu"
         super().__init__(phone_number, attack, health)
@@ -79,7 +80,7 @@ class player(Character):
             crit_dmg *= 2
 
         self.currentEnemy.take_damage(crit_dmg)
-        return self.currentEnemy.alive
+        return f'{you inflicted {crit_dmg} damage. Enemy hp is {self.currentEnemy.hp}}
 
     def take_damage(self, damage):
         self.health -= damage
@@ -149,10 +150,6 @@ class player(Character):
                     self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
                     print("DEBUG, ENEMY SELECTED!")
                 self.state = MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state']
-
-                if 'point_delta' in MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]:
-                    self.score += MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['point_delta']
-                    output.append(f"Your Score {self.score}" )
                     
             elif (likelyInputIDX == -2): ## Print last prompt saved in history, no state change
                if (self.last_prompt != None):
@@ -166,44 +163,64 @@ class player(Character):
 
         while True:
             print('Current state DEBUG: %s\n' % self.state)
+            
+            #logic for clearing all paths
+            if self.state >= 9 and self.state == "planet a'pholi directions":
+                self.state = "complete_directions"
+                output.append( MY_GAME_LOGIC[ self.state ]['prompt'])
+                self.state = MY_GAME_LOGIC[self.state]['next_state']
+                
             output.append( MY_GAME_LOGIC[ self.state ]['prompt'])
-
+            
+            #stealth state point delta
+            if 'point_delta' in MY_GAME_LOGIC[self.state]:
+                    self.score += MY_GAME_LOGIC[self.state]['point_delta']
+                    output.append(f"Congragulations your score is now {self.score}")
+                    
             if 'next_state' not in MY_GAME_LOGIC[ self.state ] or type( MY_GAME_LOGIC[ self.state ]['next_state'] ) != str:
                 break
             
             if self.state == "attack_state":
                 #player attacks
-                #method returns if enemy is alive
-                enemy_alive = self.player_attack()
+                enemy_dmg_taken = self.player_attack()
+                
                 #enemy attacks
-                player_alive = self.currentEnemy.enemy_attack(self)
-
-                if enemy_alive is True and player_alive is True:
+                player_dmg_taken = self.currentEnemy.enemy_attack(self)
+                
+                if self.alive is True and self.currentEnemy.alive is True:
                     # Scan array at MY_GAME_LOGIC['battle_state']['next_state'] for 'fight'     
                     for s in MY_GAME_LOGIC['battle_state']['next_state']:
                         if (s['input'] == 'fight'):
                             break
                     self.state = s['next_state']
+                    
+                    output.append(enemy_dmg_taken)
+                    output.append(player_dmg_taken)
+                    
                     output.append(s['prompt'])
                     break
 
-                elif enemy_alive is False:
+                elif self.currentEnemy.alive is False:
                     # Fight over, victory
                     self.state = MY_GAME_LOGIC[self.currentEnemy.name]['victory_state']
                     # resetting health
                     self.health = 100
-
+                    self.score +=1
+                    
+                    output.append(enemy_dmg_taken)
+                    output.append(f'you defeated {self.currentEnemy.name}. Your score is {self.score}')
                     output.append(MY_GAME_LOGIC[self.state]['prompt'])
-                    output.append(f'you defeated {self.currentEnemy.name}')
                     self.currentEnemy = None #  Remove the defeated enemy
                     break
 
-                elif player_alive is False:
+                elif self.alive is False:
                     #player dies
                     #reset enemy and player health
                     self.currentEnemy.hp = 100
                     self.health = 100
                     self.alive = True
+                    
+                    output.append(player_dmg_taken)
                     output.append("you lost. try again")
                     #trs to battle state again
                     self.state = MY_GAME_LOGIC[self.currentEnemy]['next_state']
