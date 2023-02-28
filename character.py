@@ -63,15 +63,15 @@ class player(Character):
         self.state = "start"
         super().__init__(phone_number, attack, health)
         
-        def player_attack(self):
-            crit_dmg = self.damage
-            crit_chance = random.randint(1, 10)
-        
-            if crit_chance == 1:
-                crit_dmg *= 2
-     
-            self.currentEnemy.take_damage(crit_dmg)
-            return self.currentEnemy.alive
+    def player_attack(self):
+        crit_dmg = self.damage
+        crit_chance = random.randint(1, 10)
+
+        if crit_chance == 1:
+            crit_dmg *= 2
+
+        self.currentEnemy.take_damage(crit_dmg)
+        return self.currentEnemy.alive
 
     def take_damage(self, damage):
         self.health -= damage
