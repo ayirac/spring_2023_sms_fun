@@ -48,7 +48,7 @@ class player(Character):
     def __init__(self, phone_number, attack, health):
 
         self.phone = phone_number
-        self.damage = 5
+        self.damage = 10
         
         self.inventory = ["sword"]
         
