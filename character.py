@@ -241,6 +241,12 @@ class player(Character):
                     output.append(f'you defeated {self.currentEnemy.name}. Your score is {self.score}')
                     output.append(MY_GAME_LOGIC[self.state]['prompt'])
                     self.currentEnemy = None #  Remove the defeated enemy
+                    if type( MY_GAME_LOGIC[ self.state ]['next_state'] ) != str: # multiple choices
+                        for z in MY_GAME_LOGIC[self.state]['next_state']:
+                            if (z['input'] == 'battle_state' or z['input'] == 'dialogue1' or z['input'] == 'dialogue2' or z['input'] == 'dialogue3'):
+                            self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
+                            print("DEBUG, ENEMY SELECTED!")
+                            break
                     break
 
                 elif self.alive is False:
