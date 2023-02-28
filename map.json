@@ -8,7 +8,7 @@
             },
             {
                 "text": "Tutorial",
-                "prompt": "RFS is a RPG with text-based respones that determine your character's actions. Possible actions for the character will be presented as they appear. Combat is based around DnD style d20 mechanics with a few skills that the player and enemies might have, such as health or attack damage.",
+                "prompt": "RFS is a RPG with text-based respones that determine your character's actions. Possible actions for the character will be presented as they appear. Combat is based around DnD style d20 mechanics with a few skills that the player and enemies might have, such as health or attack damage. At any time, you can type 'prompt' to get the last prompt resent to you.",
                 "input": "tutorial"
             },
             {
