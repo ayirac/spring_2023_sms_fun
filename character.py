@@ -165,7 +165,7 @@ class player(Character):
             print('Current state DEBUG: %s\n' % self.state)
             
             #logic for clearing all paths
-            if self.state >= 9 and self.state == "planet a'pholi directions":
+            if self.score >= 9 and self.state == "planet a'pholi directions":
                 self.state = "complete_directions"
                 output.append( MY_GAME_LOGIC[ self.state ]['prompt'])
                 self.state = MY_GAME_LOGIC[self.state]['next_state']
