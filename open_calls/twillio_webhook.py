@@ -22,22 +22,25 @@ def handle_request():
         with open(f"users/{request.form['From']}.pkl", 'rb') as p:
             act = pickle.load(p)
             logger.debug("user exists")
+            output = act.get_output(request.form['Body']) 
+            #print(output) debug
+        for o_msg in output:
+            logger.debug("returned from the character function")
+            message = g.sms_client.messages.create(
+                     body=o_msg,
+                     from_=yml_configs['twillio']['phone_number'],
+                     to=request.form['From'])
+
     else:
         act = player(request.form['From'],0,100)
         logger.debug("user doesnt exists creating player")
-    
-    logger.debug("calling act.get_output")
-    output = act.get_output(request.form['Body'])
-    logger.debug("im here")
-
-    for o_msg in output:
-        logger.debug("returned from the character function")
+        om_menu = act.get_mm()
+        #print(om_menu) debug
         message = g.sms_client.messages.create(
-                     body=o_msg,
+                     body=om_menu,
                      from_=yml_configs['twillio']['phone_number'],
                      to=request.form['From'])
 
     with open(f"users/{request.form['From']}.pkl", 'wb') as p:
         pickle.dump(act, p)
-
     return json_response( sid = message.sid )
