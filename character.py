@@ -12,7 +12,6 @@ class Enemy():
         self.name = enemyName
         self.hp = enemyHP
         self.damage = enemyBaseDMG
-      
         self.alive = True
 
     def enemy_attack(self, main_character):
@@ -60,8 +59,17 @@ class player(Character):
         self.currentEnemy = None
         self.last_prompt = None
 
-        self.state = "start"
+        self.state = "main_menu"
         super().__init__(phone_number, attack, health)
+
+    def get_mm(self):
+        menuItems = []
+        menuItems.append('Remnants of a Falling Star⭐')
+        menuItems.append('-Main Menu-')
+        for p in MY_GAME_LOGIC['main_menu']['next_state']:
+            menuItems.append(p['text'])
+        menuItems.append('Choose an option from above.')
+        return '\n'.join(menuItems)
         
     def player_attack(self):
         crit_dmg = self.damage
@@ -122,6 +130,17 @@ class player(Character):
 
     def get_output(self,msg_input):
         output = []
+        if self.state == 'main_menu': # Alternative logic for main-menu
+            likelyInputIDX = self.check_input(msg_input.lower(), 0.7)
+            if (likelyInputIDX >= 0):
+                output.append(MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['prompt'])
+            else:
+                output.append(['Not a valid choice'])
+            if (likelyInputIDX == 0):
+                self.state = 'start'
+            else:
+                return output
+            
         if type( MY_GAME_LOGIC[ self.state ]['next_state'] ) != str: # we have choices
             
             likelyInputIDX = self.check_input(msg_input.lower(), 0.7)
