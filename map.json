@@ -1,4 +1,23 @@
 {
+    "main_menu": {
+        "next_state":[ 
+            {
+                "text": "Start",
+                "prompt": "Starting a new game...",
+                "input": "start"
+            },
+            {
+                "text": "Tutorial",
+                "prompt": "RFS is a RPG with text-based respones that determine your character's actions. Possible actions for the character will be presented as they appear. Combat is based around DnD style d20 mechanics with a few skills that the player and enemies might have, such as health or attack damage.",
+                "input": "tutorial"
+            },
+            {
+                "text": "Credits",
+                "prompt": "Created for CS485 CSUSM by github handle's Diaz_jorge939, C-PU, and ayirac.",
+                "input": "credits"
+            }
+         ]
+    },
     "start": {
     
         "prompt": "Greetings traveler! The universe is filled with surprises of the unknown. Here is a story of a teenager who lived with his parents and lived a privileged life. Dad was a scientist, an engineer working for the space station. Mom worked in pharmaceuticals. Their house was on a hill, and they were going about their day, just like any ordinary day. A meteor had been brought to attention a few years ago and dad and his co-workers have been on meteor watch because one stray meteor is heading towards Earth. News of the meteor attracted attention, news anchors would give occasional updates of the meteor, while small groups around the world have exclaimed that the end is near. Majority of the population were not worried and continued living their life. Both parents leave to go to work and the player is left alone, on the weekend. The teen checks the news, and the news anchor alerts everyone with an important broadcast: “Incoming on Meteor watch, the meteor is directly heading to Earth and is traveling at an indescribable speed. Today is the day that the end is near. During the time of despair, the teenager has not prepared for this moment to come. On the bright side, the parents have prepared, due to their bunker mentality and paranoia. A few years ago, Dad showed the teenager a prototype aircraft, along with supplies for a future voyage into space. The teen decided to risk using the prototype aircraft, rather than doing nothing and waiting for the inevitable. ",
