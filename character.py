@@ -244,9 +244,9 @@ class player(Character):
                     if type( MY_GAME_LOGIC[ self.state ]['next_state'] ) != str: # multiple choices
                         for z in MY_GAME_LOGIC[self.state]['next_state']:
                             if (z['input'] == 'battle_state' or z['input'] == 'dialogue1' or z['input'] == 'dialogue2' or z['input'] == 'dialogue3'):
-                            self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
-                            print("DEBUG, ENEMY SELECTED!")
-                            break
+                                self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
+                                print("DEBUG, ENEMY SELECTED!")
+                                break
                     else:
                         myV = MY_GAME_LOGIC[ self.state ]['next_state']
                         if (myV == 'battle_state' or myV == 'dialogue1' or myV == 'dialogue2' or myV == 'dialogue3'):
