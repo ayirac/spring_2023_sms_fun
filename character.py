@@ -52,10 +52,9 @@ class player(Character):
         self.phone = phone_number
         self.damage = 10
         
-        self.inventory = ["sword","prototype excal", "prototype illidan glaive", "axe", "prototype gengi shuriken", "prototype kiriko kunai",
-            "karambit", "long sword", "broadsword", "scimitar", "saber", "kukri"]
+        self.inventory = ["broadsword"]
         
-        self.current_weapon = "sword"
+        self.current_weapon = "broadsword"
         self.armor = "scrap metal"
         
         self.score = 0
@@ -96,12 +95,28 @@ class player(Character):
         inv = ""
         for items in self.inventory:
             inv = inv + " " + items
-        return inv 
+        return inv
 
     def get_stats(self):
         stats = f'hp: {self.health} damage: {self.damage}'
 
         return stats
+    
+    def swap_weapon(self, inp):
+        WEAPONS = {}
+        input = inp.split()
+        with open('RFS.json', 'r') as my_file:
+            WEAPONS = json.loads(my_file.read())
+
+        for j in input: # Scan weapons data
+            for t in WEAPONS['weapons']:
+                for x in WEAPONS['weapons'][t]:
+                    if j.lower() in x:
+                        for p in self.inventory: # Check if weapon exists in player inventory
+                            if p == x:
+                                self.current_weapon = x
+                                return f'Swapped to {self.current_weapon}'
+        return 'Invalid weapons'
 
     # Parses a string to determine if input is valid utilizing difflib
     # Input: A string that will be split & checked for valid input in the json game logic. A float for the acceptable ratio of how likely a match is
@@ -154,6 +169,10 @@ class player(Character):
                     self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
                     print("DEBUG, ENEMY SELECTED!")
                     
+                #if msg_input.lower() ==  [self.state]['next_state']['input']
+                    #self.state = next_state['next_state']
+                 
+                #logic to prevent player from revisiting paths
                 if self.state not in self.visited_states:
                     self.visited_states.add(self.state)
                         
@@ -172,10 +191,9 @@ class player(Character):
 
         while True:
             print('Current state DEBUG: %s\n' % self.state)
-            print(f"states players has visited: {self.visited_states}")
-            
+        
             #logic for clearing all paths
-            if self.score >= 9 and self.state == "planet a'pholi directions" and self.visited_states.issuperset(first_mission):
+            if self.score >= 9 and self.state == "planet a'pholi directions":
                 self.state = "complete_directions"
                 output.append( MY_GAME_LOGIC[ self.state ]['prompt'])
                 self.state = MY_GAME_LOGIC[self.state]['next_state']
@@ -216,7 +234,6 @@ class player(Character):
                     # resetting health
                     self.health = 100
                     self.score +=1
-                    self.damage += 1
                     
                     output.append(enemy_dmg_taken)
                     output.append(f'you defeated {self.currentEnemy.name}. Your score is {self.score}')
@@ -242,6 +259,9 @@ class player(Character):
 
             elif self. state == "stats":
                 output.append(self.get_stats())
+                
+            elif self.state == "swap":
+                output.append(self.swap_weapon(msg_input))
                 
             if self.state not in self.visited_states:
                 self.visited_states.add(self.state)
