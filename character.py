@@ -18,7 +18,7 @@ class Enemy():
 
     def enemy_attack(self, main_character):
         crit_dmg = self.damage
-        crit_chance = random.randint(1, 10)
+        crit_chance = random.randint(1,5)
         
         if crit_chance == 1:
             self.damage *= 2
@@ -78,7 +78,7 @@ class player(Character):
         
     def player_attack(self):
         crit_dmg = self.damage
-        crit_chance = random.randint(1, 6)
+        crit_chance = random.randint(1, 5)
 
         if crit_chance == 1:
             crit_dmg *= 2
