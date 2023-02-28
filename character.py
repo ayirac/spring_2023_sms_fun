@@ -189,6 +189,11 @@ class player(Character):
                     return ['No prompt saved in history!']
             else:
                 return ['Ooops.. Not a valid choice...']
+        else:
+            myV = MY_GAME_LOGIC[ self.state ]['next_state']
+            if (myV == 'battle_state' or myV == 'dialogue1' or myV == 'dialogue2' or myV == 'dialogue3' or myV == 'beast'):
+                self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
+                print("DEBUG, ENEMY SELECTED!")
 
         while True:
             print('Current state DEBUG: %s\n' % self.state)
