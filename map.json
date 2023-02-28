@@ -104,7 +104,7 @@
                 ],
         "hp": 100,
         "dmg": 5,
-        "reward_prompt": "You successfully slain the enemies and made it alive, and obtain two prototype weapons (Prototype Excal and Prototype 76Soldier), and +3 skill points added to _ .",
+        "reward_prompt": "You successfully slain the enemies and made it alive, and obtain two prototype weapons (Prototype Excal and Prototype 76Soldier), and +3 skill points added to hp .",
         "victory_state": "planet a'pholi directions"
     },
 
@@ -149,9 +149,17 @@
 
     "stealth1": {
 
-        "prompt": "You warn the elder that the pathway home is dangerous and that you can escort them, in a safer path for both of you to be unharmed. As you walk with the elder alien, you find out their name, Y'Xor, and know more about his past. Y'Xor has never encountered a human before, and he was an inventor. He made gadgets and one of the major accomplishments he made was a teleportation device to teleport him back home or anywhere within the planet. Y'Xor's homeland was invaded by another alien faction and during the time, he had a family. The alien faction were mercenaries and stole one of Y'Xor's inventions, which happened to be the teleport device. Since the mercenaries were ruthless, they went on a killing spree, killing most of the villagers, along with his family, but kept him alive on one condition. Y'xor has to make an invention that is able to teleport more than one person and teleports them out of the planet. Y'xor was hurting from the pain that the mercenaries did to him, that he ran away, in a secluded area of the planet. Y'xor wanted to live life under the radar and had to start new, filled with sorrow and loneliness. While Y'Xor was living alone, a wanderer was traveling around Y'Xor's makeshift house. Y'Xor was anxious and thought it was the mercenaries. Y'Xor being paranoid, got a blade weapon and cautiously checked outside. The young child in front of him was curious and was picking crops from Y'Xor's garden, oblivious to who owns the land. Y'Xor noticed the child and the child reminded him of his son. The child talked t o Y'Xor and said to have no family either, and that they were ones to keep each other company. As Y'Xor's story concludes, you reach the end of the route and Y'Xor tells you to wait. Y'Xor walks into his house and shortly after, holds items. You successfully escorted the elderly alien! The elderly alien supplies you with gifts and waves goodbye.",
-        "reward_prompt": "You obtain resources for the aircraft (1/4), and +1 skill point stat on _",
+        "prompt": "You warn the elder that the pathway home is dangerous and that you can escort them, in a safer path for both of you to be unharmed. As you walk with the elder alien, you find out their name, Y'Xor, and know more about his past. Y'Xor has never encountered a human before, and he was an inventor. He made gadgets and one of the major accomplishments he made was a teleportation device to teleport him back home or anywhere within the planet. Y'Xor's homeland was invaded by another alien faction and during the time, he had a family. The alien faction were mercenaries and stole one of Y'Xor's inventions, which happened to be the teleport device. Since the mercenaries were ruthless, they went on a killing spree, killing most of the villagers, along with his family, but kept him alive on one condition. Y'xor has to make an invention that is able to teleport more than one person and teleports them out of the planet. Y'xor was hurting from the pain that the mercenaries did to him, that he ran away, in a secluded area of the planet. Y'xor wanted to live life under the radar and had to start new, filled with sorrow and loneliness. ",
+        "reward_prompt": "You obtain resources for the aircraft (1/4), and +1 skill point stat on damage",
 	"point_delta": 1,
+        "next_state": "stealth1_continued"
+    },
+	
+	"stealth1_continued": {
+
+        "prompt": "While Y'Xor was living alone, a wanderer was traveling around Y'Xor's makeshift house. Y'Xor was anxious and thought it was the mercenaries. Y'Xor being paranoid, got a blade weapon and cautiously checked outside. The young child in front of him was curious and was picking crops from Y'Xor's garden, oblivious to who owns the land. Y'Xor noticed the child and the child reminded him of his son. The child talked t o Y'Xor and said to have no family either, and that they were ones to keep each other company. As Y'Xor's story concludes, you reach the end of the route and Y'Xor tells you to wait. Y'Xor walks into his house and shortly after, holds items. You successfully escorted the elderly alien! The elderly alien supplies you with gifts and waves goodbye.",
+        "reward_prompt": "You obtain resources for the aircraft (1/4), and +1 skill point stat on damage",
+	    "point_delta": 1,
         "next_state": "planet a'pholi directions"
     },
 
@@ -169,7 +177,7 @@
         "next_state": "battle_state",
         "hp":100,
         "dmg":10,
-        "reward_prompt": "You successfully slain the beast and obtained resources for the aircraft (2/4 in progress of repairing aircraft), a prototype weapon (Prototype Genji Shuriken), and +1 skill point stat to _",
+        "reward_prompt": "You successfully slain the beast and obtained resources for the aircraft (2/4 in progress of repairing aircraft), a prototype weapon (Prototype Genji Shuriken), and +1 skill point stat to damage",
         "victory_state": "planet a'pholi directions"
     },
     
@@ -206,7 +214,7 @@
         "next_state": "battle_state",
         "hp":100,
         "dmg":7,
-        "reward_prompt": "You successfully slain the pests and obtained resources for the aircraft (3/4 in progress of repairing aircraft) and +1 skill point stat added to _.",
+        "reward_prompt": "You successfully slain the pests and obtained resources for the aircraft (3/4 in progress of repairing aircraft) and +1 skill point stat added to damage.",
         "victory_state": "planet a'pholi directions"
     },
 
@@ -253,7 +261,7 @@
         "next_state": "battle_state",
         "hp":200,
         "dmg":15,
-        "reward_prompt": "As you slain the leader, A'Pholi, you conquer the planet and become the new leader. You gain a plentiful amount of resources and those resources, along with the ones that were gained throughout the missions, all collectively repair the aircraft. You gain +5 stats on _,_",
+        "reward_prompt": "As you slain the leader, A'Pholi, you conquer the planet and become the new leader. You gain a plentiful amount of resources and those resources, along with the ones that were gained throughout the missions, all collectively repair the aircraft. You gain +5 stats on hp and damage",
         "victory_state": "repair_aircraft"
     },
 
