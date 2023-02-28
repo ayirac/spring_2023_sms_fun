@@ -98,7 +98,7 @@
                     {
                         "prompt": "As an attempt to de-escalate the situation, you try to talk to the enemy. (Type: 'talk')",
                         "input": "talk",
-                        "next_state": "dialogue1"
+                        "next_state": "dialogue2"
                     }
                 ],
         "hp":  100,
@@ -118,7 +118,7 @@
                     {
                         "prompt": "As an attempt to de-escalate the situation, you try to talk to the enemy. (Type: 'talk')",
                         "input": "talk",
-                        "next_state": "dialogue1"
+                        "next_state": "dialogue3"
                     }
                 ],
         "hp": 100,
@@ -324,8 +324,18 @@
         "next_state": "battle_state"
     },
     
-    "dialogue1":{
-        "prompt": "enemy dismisses peace talks and continues to charge foward and strikes. ",
+     "dialogue1":{
+        "prompt": "Enemy dismisses peace talks and continues to charge foward and strikes. ",
         "next_state":"battle_state"
+    },
+
+    "dialogue2":{
+        "prompt": "You try to convince the enemy that nonviolent actions is the key to understanding and success. Enemy scoffs, powers up a strike, trying to throw a punch towards your direction.",
+        "next_state": "battle_state"
+    },
+
+    "dialogue3":{
+        "prompt": "You approach the enemy and diffuse the tension by telling a sob story, in hopes of it distracting the enemy and sympathizing with you. The enemy listens and sheds a tear, but realizes what their mission is and yells a war cry. The enemy raises their weapon, about to attack you.",
+        "next_state": "battle_state"
     }
 }
