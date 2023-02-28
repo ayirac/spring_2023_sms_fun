@@ -151,7 +151,6 @@
 
         "prompt": "You warn the elder that the pathway home is dangerous and that you can escort them, in a safer path for both of you to be unharmed. As you walk with the elder alien, you find out their name, Y'Xor, and know more about his past. Y'Xor has never encountered a human before, and he was an inventor. He made gadgets and one of the major accomplishments he made was a teleportation device to teleport him back home or anywhere within the planet. Y'Xor's homeland was invaded by another alien faction and during the time, he had a family. The alien faction were mercenaries and stole one of Y'Xor's inventions, which happened to be the teleport device. Since the mercenaries were ruthless, they went on a killing spree, killing most of the villagers, along with his family, but kept him alive on one condition. Y'xor has to make an invention that is able to teleport more than one person and teleports them out of the planet. Y'xor was hurting from the pain that the mercenaries did to him, that he ran away, in a secluded area of the planet. Y'xor wanted to live life under the radar and had to start new, filled with sorrow and loneliness. ",
         "reward_prompt": "You obtain resources for the aircraft (1/4), and +1 skill point stat on damage",
-	"point_delta": 1,
         "next_state": "stealth1_continued"
     },
 	
