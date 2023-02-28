@@ -52,7 +52,8 @@ class player(Character):
         self.phone = phone_number
         self.damage = 10
         
-        self.inventory = ["broadsword"]
+        self.inventory = ["broadsword","prototype excal", "prototype illidan glaive", "axe", "prototype gengi shuriken", "prototype kiriko kunai",
+            "karambit", "long sword", "broadsword", "scimitar", "saber", "kukri"]
         
         self.current_weapon = "broadsword"
         self.armor = "scrap metal"
@@ -77,7 +78,7 @@ class player(Character):
         
     def player_attack(self):
         crit_dmg = self.damage
-        crit_chance = random.randint(1, 10)
+        crit_chance = random.randint(1, 6)
 
         if crit_chance == 1:
             crit_dmg *= 2
@@ -191,9 +192,10 @@ class player(Character):
 
         while True:
             print('Current state DEBUG: %s\n' % self.state)
-        
+            print(f"states players has visited: {self.visited_states}")
+
             #logic for clearing all paths
-            if self.score >= 9 and self.state == "planet a'pholi directions":
+            if self.score >= 9 and self.state == "planet a'pholi directions" and self.visited_states.issuperset(first_mission):
                 self.state = "complete_directions"
                 output.append( MY_GAME_LOGIC[ self.state ]['prompt'])
                 self.state = MY_GAME_LOGIC[self.state]['next_state']
@@ -234,7 +236,7 @@ class player(Character):
                     # resetting health
                     self.health = 100
                     self.score +=1
-                    
+                    self.damage +=1
                     output.append(enemy_dmg_taken)
                     output.append(f'you defeated {self.currentEnemy.name}. Your score is {self.score}')
                     output.append(MY_GAME_LOGIC[self.state]['prompt'])
