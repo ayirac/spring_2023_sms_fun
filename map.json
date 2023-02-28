@@ -294,7 +294,7 @@
 
     "battle_state":{
         
-	"prompt": "battle state options: fight, inventory, stats",
+	"prompt": "battle state options: fight, inventory, stats, swap weapon",
         "next_state": [
             {
                 "prompt": "you are attacking the enemy ('fight')",
@@ -310,24 +310,33 @@
                 "prompt": "displaying stats ('stats')",
                 "input": "stats",
                 "next_state": "stats"
+            },
+        {
+                "prompt": "swapping weapon ('swap %s')",
+                "input": "swap",
+                "next_state": "swap"
             }
+
         ]
     },
 
     "attack_state":{
-        "prompt": "options: fight, stats, inventory",
+        "prompt": "options: fight, stats, inventory, swap weapon",
         "next_state": "battle_state"
     },
 
     "inventory":{
-        "prompt": "options: fight, stats, inventory",
+        "prompt": "options: fight, stats, inventory, swap weapon",
         "next_state": "battle_state"
     },
     "stats":{
-	"prompt": "options: fight, stats, inventory",
+	"prompt": "options: fight, stats, inventory, swap weapon",
         "next_state": "battle_state"
     },
-    
+    "swap":{
+        "prompt": "options: fight, stats, inventory, swap weapon",
+        "next_state": "battle_state"
+    },
      "dialogue1":{
         "prompt": "Enemy dismisses peace talks and continues to charge foward and strikes. ",
         "next_state":"battle_state"
