@@ -22,7 +22,7 @@ class Enemy():
             self.damage *= 2
 
         main_character.take_damage(crit_dmg)
-        return f'Enemy landed {crit_dmg} damage. Your health is now {self.health}'
+        return f'Enemy landed {crit_dmg} damage. Your health is now {main_character.health}'
 
     def take_damage(self, damage):
         self.hp -= damage
