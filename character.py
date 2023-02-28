@@ -80,7 +80,7 @@ class player(Character):
             crit_dmg *= 2
 
         self.currentEnemy.take_damage(crit_dmg)
-        return f'{you inflicted {crit_dmg} damage. Enemy hp is {self.currentEnemy.hp}}
+        return f'{you inflicted {crit_dmg} damage. Enemy hp is {self.currentEnemy.hp}'
 
     def take_damage(self, damage):
         self.health -= damage
