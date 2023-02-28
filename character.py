@@ -3,6 +3,8 @@ import random
 import difflib
 from tools.logging import logger
 
+first_mission = {"east","west","north","south"} #first_mission set to compare with visited_states set 
+
 MY_GAME_LOGIC = {}
 with open('map.json', 'r') as my_file:
     MY_GAME_LOGIC = json.loads(my_file.read())
@@ -55,11 +57,12 @@ class player(Character):
         self.current_weapon = "sword"
         self.armor = "scrap metal"
         
+        self.score = 0
         self.alive = True
         self.currentEnemy = None
         self.last_prompt = None
-        self.score = 0
-
+        
+        self.visited_states = set()
         self.state = "main_menu"
         super().__init__(phone_number, attack, health)
 
@@ -149,7 +152,16 @@ class player(Character):
                 if (MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state'] == 'battle_state' or MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state'] == 'dialogue1'):
                     self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
                     print("DEBUG, ENEMY SELECTED!")
+                    
+                #if msg_input.lower() ==  [self.state]['next_state']['input']
+                    #self.state = next_state['next_state']
+                 
+                #logic to prevent player from revisiting paths
+                if self.state not in self.visited_states:
+                    self.visited_states.add(self.state)
+                        
                 self.state = MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state']
+                print("MY_GAME_LOGIC[self.state]['next_state'][likelyInputIDX]['next_state'] is: " + self.state)
                     
             elif (likelyInputIDX == -2): ## Print last prompt saved in history, no state change
                if (self.last_prompt != None):
@@ -163,7 +175,7 @@ class player(Character):
 
         while True:
             print('Current state DEBUG: %s\n' % self.state)
-            
+        
             #logic for clearing all paths
             if self.score >= 9 and self.state == "planet a'pholi directions":
                 self.state = "complete_directions"
@@ -231,7 +243,11 @@ class player(Character):
 
             elif self. state == "stats":
                 output.append(self.get_stats())
+                
+            if self.state not in self.visited_states:
+                self.visited_states.add(self.state)
 
             self.state = MY_GAME_LOGIC[ self.state]['next_state']
+            
         self.last_prompt = output
         return output
