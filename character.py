@@ -272,7 +272,7 @@ class player(Character):
                     output.append(player_dmg_taken)
                     output.append("you lost. try again")
                     #trs to battle state again
-                    self.state = MY_GAME_LOGIC[self.currentEnemy]['next_state']
+                    self.state = MY_GAME_LOGIC[self.currentEnemy.name]['next_state']
                     break
                 
             elif self.state == "inventory":
