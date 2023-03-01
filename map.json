@@ -197,7 +197,7 @@
         "input": "fight",
         "next_state": "battle_state",
         "hp":100,
-        "dmg":10,
+        "dmg":9,
         "reward_prompt": "You successfully slain the beast and obtained resources for the aircraft (2/4 in progress of repairing aircraft), a prototype weapon (Prototype Genji Shuriken), and +1 skill point stat to damage",
         "victory_state": "planet a'pholi directions"
     },
