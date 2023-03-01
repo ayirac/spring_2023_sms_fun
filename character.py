@@ -214,7 +214,7 @@ class player(Character):
             
             # Show player credits at end, reset in future if needed
             if (self.state == 'repair_aircraft'):
-                output.append(MY_GAME_LOGIC['main_menu']['next_state'][2]['prompt']
+                output.append(MY_GAME_LOGIC['main_menu']['next_state'][2]['prompt'])
             
             #stealth state point delta
             if 'point_delta' in MY_GAME_LOGIC[self.state]:
