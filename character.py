@@ -201,7 +201,9 @@ class player(Character):
         while True:
             print('Current state DEBUG: %s\n' % self.state)
             print(f"states players has visited: {self.visited_states}")
-
+            if self.state == "first_pest":
+                self.currentEnemy = Enemy(self.state, MY_GAME_LOGIC[self.state]['hp'], MY_GAME_LOGIC[self.state]['dmg'])
+                
             #logic for clearing all paths
             if self.score >= 9 and self.state == "planet a'pholi directions" and self.visited_states.issuperset(first_mission):
                 self.state = "complete_directions"
