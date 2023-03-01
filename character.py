@@ -218,8 +218,8 @@ class player(Character):
             
             #stealth state point delta
             if 'point_delta' in MY_GAME_LOGIC[self.state]:
-                    self.score += MY_GAME_LOGIC[self.state]['point_delta']
-                    output.append(f"Congragulations your score is now {self.score}")
+                self.score += MY_GAME_LOGIC[self.state]['point_delta']
+                output.append(f"Congragulations your score is now {self.score}")
                     
             if 'next_state' not in MY_GAME_LOGIC[ self.state ] or type( MY_GAME_LOGIC[ self.state ]['next_state'] ) != str:
                 break
